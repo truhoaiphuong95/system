@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   @yield('head')
-  <title>KING | Blank Page</title>
+  <title>DELI | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -31,10 +31,10 @@
         <a href="{{route('staff.dashboard.view.get')}}" class="nav-link">Trang chủ</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.course.list.get')}}" class="nav-link">Khoá học</a>
+        <a href="https://www.facebook.com/" class="nav-link">Facebook</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.ticket.list.get')}}" class="nav-link">Kỹ thuật</a>
+        <a href="https://drive.google.com/drive/u/0/my-drive" class="nav-link">Drive</a>
       </li>
     </ul>
 

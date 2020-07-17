@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DelCourseLogsTable extends Migration
+class CreateTestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class DelCourseLogsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('course_logs');
+        Schema::create('test', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,8 +27,6 @@ class DelCourseLogsTable extends Migration
      */
     public function down()
     {
-        Schema::table('course_logs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('test');
     }
 }
