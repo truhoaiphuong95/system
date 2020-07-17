@@ -60,7 +60,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">KING System</span>
+      <span class="brand-text font-weight-light">DELI System</span>
     </a>
 
     <!-- Sidebar -->
@@ -97,7 +97,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.shift.manager.get')}}" class="nav-link">
                   <i class="fa fa-calendar-check-o nav-icon"></i>
-                  <p>Xếp làm việc</p>
+                  <p>Sắp lịch làm</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -127,7 +127,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.shift.view.get')}}" class="nav-link">
                   <i class="fa fa-calendar nav-icon"></i>
-                  <p>Xem lịch làm việc</p>
+                  <p>Xem lịch làm</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -136,11 +136,11 @@
                   <p>Đăng ký lịch làm</p>
                 </a>
               </li>
-              @if(UserInfo()->isOfficial())
+              @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
                   <i class="fa fa-bar-chart nav-icon"></i>
-                  <p>Xem thống kê</p>
+                  <p>Thống kê doanh số</p>
                 </a>
               </li>
               @endif
@@ -150,7 +150,7 @@
           <li class="nav-item">
             <a href="{{route('staff.client.list.get')}}" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
-              <p>Danh bạ khách</p>
+              <p>Danh sách khách hàng</p>
             </a>
           </li>
           @endif
@@ -158,7 +158,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
               <p>
-                Kỹ thuật
+                Phòng thiết kế
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -166,19 +166,21 @@
               <li class="nav-item">
                 <a href="{{route('staff.ticket.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách</p>
+                  <p>Biên nhận</p>
                 </a>
               </li>
+              @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.ticketlog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
                   <p>Nhật ký sửa chữa</p>
                 </a>
               </li>
+              @endif
               <li class="nav-item">
                 <a href="{{route('staff.feedback.list.get')}}" class="nav-link">
                   <i class="fa fa-heartbeat nav-icon"></i>
-                  <p>Chăm sóc khách hàng</p>
+                  <p>CSKH</p>
                 </a>
               </li>
             </ul>
@@ -187,7 +189,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-cube"></i>
               <p>
-                Dịch vụ
+                Bảng báo giá
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -195,7 +197,13 @@
               <li class="nav-item">
                 <a href="{{route('staff.service.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách</p>
+                  <p>Thiết kế</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('staff.service.list.get')}}" class="nav-link">
+                  <i class="fa fa-list nav-icon"></i>
+                  <p>In ấn</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -210,7 +218,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                Lớp học
+                Dự án
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -218,23 +226,23 @@
               <li class="nav-item">
                 <a href="{{route('staff.course.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách lớp</p>
+                  <p>Danh sách dự án</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Thêm lớp mới</p>
+                  <p>Thêm dự án</p>
                 </a>
               </li>
             </ul>
           </li>
-          @if(UserInfo()->isOfficial())
+          @if(UserInfo()->isManager())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
               <p>
-                Thu - Chi
+                Kế toán
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -301,7 +309,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0-alpha
     </div>
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2019-2020 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
     reserved.
   </footer>
 </div>
