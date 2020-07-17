@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Tổng kết báo cáo công việc</title>
+<title>DELI | Báo cáo</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>BÁO CÁO CÔNG VIỆC</h1>
+            <h1 class="text-center">BÁO CÁO CÔNG VIỆC</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Báo cáo công việc</li>
+              <li class="breadcrumb-item"><a href="{{route('staff.dashboard.view.get')}}">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Báo cáo</li>
             </ol>
           </div>
         </div>
@@ -37,15 +37,15 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tài nguyên có thể tải</h3>
+              <h3 class="card-title">Danh sách báo cáo công việc hàng ngày</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                      <tr>
+                      <tr class="text-center">
                         <th>Thời gian</th>
-                        <th>Nhân sự</th>
+                        <th style="width=200px">Nhân sự</th>
                         <th>Nội dung</th>
                       </tr>
                     </thead>

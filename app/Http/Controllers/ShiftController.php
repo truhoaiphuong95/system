@@ -21,7 +21,7 @@ class ShiftController extends Controller
     public function __construct()
     {
         $this->sessionofday = array(
-            'morning' => 'Buổi sáng - 7h30 - 11h30', 
+            'morning' => 'Buổi sáng', 
             'everning' => 'Buổi chiều', 
             'afternoon' => 'Buổi tối'
         );

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Quản lý ca làm việc</title>
+<title>DELI | Quản lý ca làm việc</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 <link rel="stylesheet" href="{{ secure_asset('plugins/iCheck/all.css') }}">
 @stop
