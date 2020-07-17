@@ -45,7 +45,7 @@
                     <thead>
                       <tr class="text-center">
                         <th>Thời gian</th>
-                        <th style="width=200px">Nhân sự</th>
+                        <th style="width: 200px;">Nhân sự</th>
                         <th>Nội dung</th>
                       </tr>
                     </thead>
