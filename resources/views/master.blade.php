@@ -89,7 +89,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-briefcase"></i>
               <p>
-                Quản lý
+                PHÒNG QUẢN LÝ
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -113,7 +113,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-file-text"></i>
               <p>
-                Hành chính
+                PHÒNG HÀNH CHÍNH
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -158,7 +158,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
               <p>
-                Phòng thiết kế
+                PHÒNG THIẾT KẾ
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -189,7 +189,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-cube"></i>
               <p>
-                Bảng báo giá
+                Dịch vụ
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -218,7 +218,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                Dự án
+                DỰ ÁN
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -242,7 +242,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
               <p>
-                Kế toán
+                PHÒNG KẾ TOÁN
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -268,7 +268,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-link"></i>
               <p>
-                Thư viện
+                THƯ VIỆN VÀ TÀI LIỆU
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>

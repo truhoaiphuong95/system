@@ -1,10 +1,8 @@
 @extends('master')
-
 @section('head')
-<title>KING | Báo cáo công việc</title>
+<title>DELI | Sửa báo cáo</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
-
 @section('main')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -17,8 +15,8 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Báo cáo công việc</li>
+          <li class="breadcrumb-item"><a href="{{route('staff.dashboard.view.get')}}">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Báo cáo</li>
           </ol>
         </div>
       </div>

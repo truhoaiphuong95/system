@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="text-center">BÁO CÁO CÔNG VIỆC</h1>
+            <h1 class="text-primary">BÁO CÁO CÔNG VIỆC</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -22,7 +22,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
     @if (session('success'))

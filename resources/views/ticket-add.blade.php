@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập biên nhận mới</title>
+<title>DELI | Thêm biên nhận</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>NHẬP BIÊN NHẬN</h1>
+          <h1>BIÊN NHẬN</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập biên nhận</li>
+            <li class="breadcrumb-item active">biên nhận</li>
           </ol>
         </div>
       </div>
@@ -30,7 +30,7 @@
       @if(count($client->tickets)>0)
       <div class="card card-info collapsed-card card-outline">
               <div class="card-header">
-                <h3 class="card-title">Thông tin các máy trước. </h3>
+                <h3 class="card-title">Thông tin biên nhận gần đây! </h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -78,7 +78,7 @@
             </div>
             <div class="form-group">
               <label>Dịch vụ:</label>
-              <select name="services[]" class="form-control select2" multiple="multiple" data-placeholder="Cài Windows? Office?" autofocus>
+              <select name="services[]" class="form-control select2" multiple="multiple" data-placeholder="Thiết kế Logo?" autofocus>
               @foreach($services as $service)
                 <option value="{{$service->id}}">{{$service->name}}</option>
               @endforeach
@@ -86,32 +86,43 @@
             </div>
             <!-- /.form-group -->
             <div class="form-group">
-              <label for="requestment">Yêu cầu khác:</label>
-              <input name="requestment" type="text" class="form-control" id="requestment" placeholder="Cần xử lý những gì?">
+              <label for="requestment">Lĩnh vực kinh doanh:</label>
+              <input name="requestment" type="text" class="form-control" id="requestment" placeholder="Thời trang, sự kiện, cá nhân, kinh doanh, nhà hàng, du lịch, ...">
             </div>
             <div class="form-group">
-              <label for="model">Dòng máy:</label>
-              <input name="model" type="text" class="form-control" id="model" placeholder="Asus N53TK, Dell Inspiron 15,..." @if(isset($ticket_old)) value="{{$ticket_old->model}}" @endif required>
+              <label for="model">Tên thương hiệu:</label>
+              <input name="model" type="text" class="form-control" id="model" placeholder="DELI for anyone" @if(isset($ticket_old)) value="{{$ticket_old->model}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="cpu">CPU:</label>
-              <input name="cpu" type="text" class="form-control" id="cpu" placeholder="AMD AX, Intel iX-1234,..." @if(isset($ticket_old)) value="{{$ticket_old->cpu}}" @endif required>
+              <label for="cpu">Màu sắc:</label>
+              <input name="cpu" type="text" class="form-control" id="cpu" placeholder="" @if(isset($ticket_old)) value="{{$ticket_old->cpu}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="ram">Dung lượng RAM:</label>
-              <input name="ram" type="text" class="form-control" id="ram" placeholder="Bao nhiêu GB?" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required>
+              <label for="ram">Mô tả yêu cầu:</label>
+              <input name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="storage">Dung lượng ổ cứng:</label>
-              <input name="storage" type="text" class="form-control" id="storage" placeholder="Bao nhiêu GB?" @if(isset($ticket_old)) value="{{$ticket_old->storage}}" @endif required>
+              <label for="storage">Thời gian thiết kế (Trả File)</label>
+              <input name="storage" type="text" class="form-control" id="storage" placeholder="Thời gian trả File 3 ngày trừ lễ và chủ nhật" @if(isset($ticket_old)) value="{{$ticket_old->storage}}" @endif required>
+            </div>
+            <div>
+              <b>Những yêu cầu khác</b>
             </div>
             <div class="form-group">
-              <label for="note">Tình trạng máy:</label>
-              <input name="note" type="text" class="form-control" id="note" placeholder="Bình thường, Tình trạng Pin,..." required>
+              <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)</label>
+              <input name="note" type="text" class="form-control" id="note" placeholder="Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)" required>
             </div>
             <div class="form-group">
-              <label for="other">Phụ kiện kèm theo:</label>
-              <input name="other" type="text" class="form-control" id="other" placeholder="Sạc, túi chống sốc,..." required>
+              <label for="other">Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)</label>
+              <input name="other" type="text" class="form-control" id="other" placeholder="Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)" required>
+            </div>
+            <div class="form-group">
+              <label for="material">Chất liệu in mà bạn muốn sử dụng trong namecard của mình?</label>
+              <input name="material" type="text" class="form-control" id="material" placeholder="Chất liệu in mà bạn muốn sử dụng trong namecard của mình?" required>
+            </div>
+            <div class="form-group">
+              <label for="style">Bạn muốn thiết kế theo phong cách nào?</label>
+              <input name="style" type="text" class="form-control" id="style" placeholder="Đơn giản hiện đại, ít màu sắc hoặc nhiều màu sắc các họa tiết hoa văn?" required>
             </div>
           </div>
           <!-- /.card-body -->

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Báo cáo công việc</title>
+<title>DELI | Làm báo cáo</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
 
@@ -18,7 +18,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Báo cáo công việc</li>
+            <li class="breadcrumb-item active">báo cáo</li>
           </ol>
         </div>
       </div>
