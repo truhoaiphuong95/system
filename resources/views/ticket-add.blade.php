@@ -101,7 +101,7 @@
             </div>
             <div class="form-group">
               <label for="ram">Mô tả yêu cầu:</label>
-              <textarea> name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required</textarea>
+              <input name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required>
             </div>
             <div class="form-group">
               <label for="storage">Thời gian thiết kế (Trả File)</label>
