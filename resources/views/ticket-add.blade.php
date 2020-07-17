@@ -43,15 +43,17 @@
           <table class="table table-bordered">
             <tr>
               <th>ID</th>
-              <th>Dòng máy</th>
-              <th>Cấu hình</th>
+              <th>Lĩnh vực kinh doanh</th>
+              <th>Thương hiệu</th>
+              <th>Màu sắc</th>
               <th></th>
             </tr>
             @foreach($client->tickets as $data)
             <tr>
               <td>{{$data->id}}</td>
               <td>{{$data->requestment}}</td>
-              <td>CPU {{$data->cpu}}, RAM {{$data->ram}}, Ổ CỨNG {{$data->storage}}</td>
+              <td>{{$data->model}}</td>
+              <td>{{$data->cpu}}</td>
               <td><a href="{{route('staff.ticket.useold.get', ['ticket_id' => $data->id])}}" class="btn btn-block btn-primary">Sử dụng</a></td>
             </tr>
             @endforeach
@@ -99,7 +101,7 @@
             </div>
             <div class="form-group">
               <label for="ram">Mô tả yêu cầu:</label>
-              <input name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required>
+              <textarea> name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required</textarea>
             </div>
             <div class="form-group">
               <label for="storage">Thời gian thiết kế (Trả File)</label>
