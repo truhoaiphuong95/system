@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập phiếu thu mới</title>
+<title>DELI | Nhập phiếu thu</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -54,8 +54,8 @@
               <input name="client_id" type="hidden" class="form-control" value="{{ $client->id }}">
             </div>
             <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
+              <label for="id">Số lai:</label>
+              <input name="id" type="number" class="form-control" id="id" placeholder="Số lai" readonly="readonly">
             </div>
             <div class="form-group">
               <label for="content">Nội dung thu:</label>
