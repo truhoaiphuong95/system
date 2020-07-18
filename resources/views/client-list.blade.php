@@ -54,7 +54,7 @@
                   <td>{{$data->major}}</td>
                   <td class="text-center">
                     <button type="submit" class="btn btn-primary">
-                      <a href="{{route('staff.client.view.get')}}">Xem</a>
+                      <a href="{{route('staff.client.view.get', ['client_id'=>$id])}}">Xem</a>
                     </button>
                   </td>
                 </tr>
