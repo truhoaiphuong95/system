@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Khách hàng: {{$client->name}}</title>
+<title>DELI | Khách hàng: {{$client->name}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,7 +11,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="text-uppercase">KHÁCH HÀNG: {{$client->name}}</h1>
+          <h1 class="text-uppercase">KHÁCH HÀNG: <b class="text-prmary">{{$client->name}}</b></h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -55,26 +55,26 @@
               <div class="text-center">
                 <img class="profile-user-img img-fluid img-circle" src="{{secure_asset('dist/img/user4-128x128.jpg')}}" alt="User profile picture">
               </div>
-              <h3 class="profile-username text-center"> {{$client->name}}</h3>
+              <h3 class="profile-username text-center text-uppercase">{{$client->name}}</h3>
               <!--<p class="text-muted text-center">Software Engineer</p>-->
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
-                  <b>Số điện thoại</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
+                  <b>SỐ ĐIỆN THOẠI:</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Ngày sinh</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else Không có @endif</a>
+                  <b>NGÀY SINH:</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else Không có @endif</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Zalo</b> @if ($client->zalo!="") <a class="float-right" href="https://zalo.me/{{$client->zalo}}">{{$client->zalo}}</a>  @else <a class="float-right">Không có</a> @endif
+                  <b>ZALO:</b> @if ($client->zalo!="") <a class="float-right" href="https://zalo.me/{{$client->zalo}}">{{$client->zalo}}</a>  @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Email</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
+                  <b>EMAIL:</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Ngành học</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
+                  <b>NGÀNH NGHỀ KINH DOANH:</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
-              @if(UserInfo()->level >= 3)
+              @if(UserInfo()->level >= 5)
               <a href="{{route('staff.payment.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuchi">
               <i class="fa fa-arrow-right"></i> Thêm phiếu chi (F6)
               </a>
@@ -83,10 +83,10 @@
               </a>
               @endif
               <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
-              <i class="fa fa-book"></i> Thêm biên nhận (F8)
+              <i class="fa fa-book"></i> BIÊN NHẬN THIẾT KẾ (F8)
               </a>
               <a href="{{route('staff.coursestudent.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemvaolop">
-              <i class="fa fa-university"></i> Thêm vào lớp (F9)
+              <i class="fa fa-university"></i> THÊM VÀO DỰ ÁN (F9)
               </a>
               <a href="{{route('staff.client.edit.get', ['client_id'=>$client->id])}}" class="btn btn-info btn-block"><b>Sửa thông tin</b></a>
             </div>
@@ -97,30 +97,30 @@
         <div class="col-md-9">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Danh sách biên nhận</h3>
+              <h3 class="card-title">DANH SÁCH BIÊN NHẬN THIẾT KẾ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
-                    <th>Ngày/Tháng</th>
-                    <th>Số phiếu</th>
-                    <th>Dòng Máy</th>
-                    <th>Tiến độ</th>
-                    <th></th>
+                  <tr class="text-center">
+                    <th>NGÀY NHẬN</th>
+                    <th>SỐ PHIẾU</th>
+                    <th>TÊN THƯƠNG HIỆU</th>
+                    <th>TIẾN ĐỘ THIẾT KẾ</th>
+                    <th>HÀNH ĐỘNG</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($client->tickets as $data)
                   <tr>
-                    <td>{{date("d/m/Y", strtotime($data->created_at))}}</td>
-                    <td>{{$data->id}}</td>
+                    <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                    <td class="text-center">{{$data->id}}</td>
                     <td>{{$data->model}}</td>
-                    <td>
+                    <td class="text-right">
                       <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
                     </td>
-                    <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                    <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
@@ -131,18 +131,18 @@
           <!-- /.card -->
           <div class="card card card-info">
             <div class="card-header">
-              <h3 class="card-title">Danh sách lớp đã tham gia</h3>
+              <h3 class="card-title">DANH SÁCH DỰ ÁN THIẾT KẾ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>Tên lớp</th>
-                    <th>Ưu đãi</th>
-                    <th>Học phí</th>
-                    <th>Đã thu</th>
-                    <th>Còn lại</th>
+                    <th>TÊN THƯƠNG HIỆU</th>
+                    <th>THIẾT KẾ</th>
+                    <th>BÁO GIÁ</th>
+                    <th>ĐÃ THU</th>
+                    <th>CHƯA THU</th>
                     <th></th>
                   </tr>
                 </thead>

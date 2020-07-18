@@ -36,12 +36,12 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th>Mã KH</th>
-                  <th>Tên khách hàng</th>
-                  <th>Số điện thoại</th>
-                  <th>Ngày sinh</th>
-                  <th>Ngành nghề kinh doanh</th>
-                  <th>Hành động</th>
+                  <th>MÃ KH</th>
+                  <th>TÊN KHÁCH HÀNG</th>
+                  <th>SỐ ĐIỆN THOẠI</th>
+                  <th>NGÀY SINH</th>
+                  <th>NGÀNH NGHỀ KINH DOANH</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,7 @@
                   <td class="text-center">{!!$data->linkPhone()!!}</td>
                   <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
                   <td>{{$data->major}}</td>
-                  <td>
+                  <td class="text-center">
                     <a href="{{route('staff.client.view.get', ['client_id' => $data->id])}}" class="btn btn-primary">Xem</a>
                   </td>
                 </tr>
