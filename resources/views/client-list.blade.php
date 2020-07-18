@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Danh sách khách hàng</title>
+<title>DELI | Danh sách khách hàng</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ KHÁCH HÀNG</h1>
+            <h1>DANH SÁCH KHÁCH HÀNG</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sổ khách hàng</li>
+              <li class="breadcrumb-item active">Danh sách khách hàng</li>
             </ol>
           </div>
         </div>
@@ -35,11 +35,12 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Mã khách hàng</th>
+                <tr class="text-center">
+                  <th>Mã KH</th>
                   <th>Tên khách hàng</th>
                   <th>Số điện thoại</th>
                   <th>Ngày sinh</th>
+                  <th>Ngành nghề kinh doanh</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,10 @@
                   <td>{!!$data->linkName()!!}</td>
                   <td>{!!$data->linkPhone()!!}</td>
                   <td>@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
+                  <td>{{$data->major}}</td>
+                  <td>
+                    <button type="submit" class="btn btn-primary">Xem</button>
+                  </td>
                 </tr>
                 @endforeach
                 </tfoot>

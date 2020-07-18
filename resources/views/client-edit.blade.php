@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sửa khách hàng: {{$client->ten}}</title>
+<title>DELI | Sửa thông tin khách hàng: {{$client->ten}}</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>KHÁCH HÀNG</h1>
+            <h1>THAY ĐỔI THÔNG TIN KHÁCH HÀNG</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa thông tin khách hàng</li>
+              <li class="breadcrumb-item active">Thay đổi thông tin khách hàng</li>
             </ol>
           </div>
         </div>
@@ -33,7 +33,6 @@
       </div>
     @endforeach
     @endif
-    
       <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -69,12 +68,11 @@
                     <input name="email" type="text" class="form-control" id="email" value="{{$client->email}}" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Ngành học:</label>
+                    <label for="major">Ngành nghề kinh doanh:</label>
                     <input name="major" type="text" class="form-control" id="major" value="{{$client->major}}" >
                   </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                   <a onclick="history.go(-1);" class="btn">Quay lại</a>

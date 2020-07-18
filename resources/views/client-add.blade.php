@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELI | Thêm khách hàng mới</title>
+<title>DELI | Nhập Thông tin Khách hàng</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>NHẬP KHÁCH HÀNG</h1>
+            <h1>NHẬP THÔNG TIN KHÁCH HÀNG</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhập khách hàng</li>
+            <li class="breadcrumb-item"><a href="{{route('staff.dashboard.view.get')}}">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Nhập thông tin khách hàng</li>
             </ol>
           </div>
         </div>
@@ -31,12 +31,11 @@
           <h4><i class="icon fa fa-ban"></i> Thất bại!</h4> {!! $error !!}
       </div>
     @endforeach
-    @endif
-    
+    @endif 
       <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông tin khách hàng</h3>
+                <h3 class="card-title">Nhập thông tin khách hàng</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -68,20 +67,19 @@
                     <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Ngành học:</label>
+                    <label for="major">Ngành nghề kinh doanh:</label>
                     <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm vào</button>
+                  <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
                   <a onclick="history.go(-1);" class="btn">Quay lại</a>
                 </div>
               </form>
             </div>
             <!-- /.card -->
-
     </section>
     <!-- /.content -->
   </div>
