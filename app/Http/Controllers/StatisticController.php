@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Models\CourseStudent;
+use App\Models\Course_student;
 use App\Models\Ticket;
 use App\Models\Receipt;
 use App\Models\Payment;
@@ -25,19 +25,27 @@ class StatisticController extends Controller
         }
         $thismonth = $ticket_count[Carbon::now()->month-1];
         $lastmonth = $ticket_count[Carbon::now()->month-2];
-        $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        if($lastmonth==0) {
+            $data['ticket_growth'] = 100;
+        } else {
+            $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        }
         $data['ticket_count'] = $ticket_count;
 
-        $data['student_sum'] = CourseStudentwhereYear('created_at', '=', Carbon::now()->year)->get()->count();
+        $data['student_sum'] = Course_student::whereYear('created_at', '=', Carbon::now()->year)->get()->count();
 
         for($i=0; $i<12; $i++) {
-            $student_count[$i] = CourseStudentwhereYear('created_at', '=', Carbon::now()->year)
+            $student_count[$i] = Course_student::whereYear('created_at', '=', Carbon::now()->year)
               ->whereMonth('created_at', '=', $i+1)
               ->get()->count();
         }
         $thismonth = $student_count[Carbon::now()->month-1];
         $lastmonth = $student_count[Carbon::now()->month-2];
-        $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        if($lastmonth==0) {
+            $data['student_growth'] = 100;
+        } else {
+            $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        }
         $data['student_count'] = $student_count;
 
         $fields = field::all();
