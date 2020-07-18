@@ -41,18 +41,21 @@
                   <th>Số điện thoại</th>
                   <th>Ngày sinh</th>
                   <th>Ngành nghề kinh doanh</th>
+                  <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($clients as $data)
                 <tr>
-                  <td>{{$data->id}}</td>
+                  <td class="text-center">{{$data->id}}</td>
                   <td>{!!$data->linkName()!!}</td>
-                  <td>{!!$data->linkPhone()!!}</td>
-                  <td>@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
+                  <td class="text-center">{!!$data->linkPhone()!!}</td>
+                  <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
                   <td>{{$data->major}}</td>
-                  <td>
-                    <button type="submit" class="btn btn-primary">Xem</button>
+                  <td class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                      <a href="{{route('staff.client.view.get')}}">Xem</a>
+                    </button>
                   </td>
                 </tr>
                 @endforeach
