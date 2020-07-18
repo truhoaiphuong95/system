@@ -59,7 +59,7 @@
             </div>
             <div class="form-group">
               <label for="content">Nội dung thu:</label>
-              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Thu học phí THCB-K10" autofocus required>
+              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Thiết kế Logo" autofocus required>
             </div>
             <div class="form-group">
               <label for="amount">Số tiền:</label>
@@ -86,10 +86,10 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="field_id">Danh muc thu:</label>
+              <label for="field_id">Danh mục thu:</label>
               <select name="field_id" id="field_id" class="form-control select2" style="width: 100%;">
                 @foreach ($fields as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                  <option value="{{$data->id}}">{{$data->name}}</option>
                 @endforeach
               </select>
             </div>
