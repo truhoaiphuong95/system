@@ -53,7 +53,7 @@
                   <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
                   <td>{{$data->major}}</td>
                   <td>
-                    <a href="{{route('staff.client.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>
+                    <a href="{{route('staff.client.view.get', ['client_id' => $data->id])}}" class="btn btn-primary">Xem</a>
                   </td>
                 </tr>
                 @endforeach
