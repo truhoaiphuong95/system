@@ -52,10 +52,8 @@
                   <td class="text-center">{!!$data->linkPhone()!!}</td>
                   <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
                   <td>{{$data->major}}</td>
-                  <td class="text-center">
-                    <button type="submit" class="btn btn-primary">
-                      <a href="{!!$data->linkName()!!}">Xem</a>
-                    </button>
+                  <td>
+                    <a href="{{route('staff.client.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>
                   </td>
                 </tr>
                 @endforeach
