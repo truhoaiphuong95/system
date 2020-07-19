@@ -192,81 +192,8 @@
                 </tfoot>
             </table>
           </div>
-
+          
           <!-- /.card-body -->
-          <div class="col-md-9">
-          <div class="card card-info">
-            <div class="card-header">
-              <h3 class="card-title">DANH SÁCH BIÊN NHẬN THIẾT KẾ</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr class="text-center">
-                    <th>NGÀY NHẬN</th>
-                    <th>SỐ PHIẾU</th>
-                    <th>TÊN THƯƠNG HIỆU</th>
-                    <th>TIẾN ĐỘ THIẾT KẾ</th>
-                    <th>HÀNH ĐỘNG</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($client->tickets as $data)
-                  <tr>
-                    <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
-                    <td class="text-center">{{$data->id}}</td>
-                    <td>{{$data->model}}</td>
-                    <td class="text-center">
-                      <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
-                    </td>
-                    <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
-                  </tr>
-                  @endforeach
-                  </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-          <div class="card card card-info">
-            <div class="card-header">
-              <h3 class="card-title">DANH SÁCH DỰ ÁN THIẾT KẾ</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example2" class="table table-bordered table-striped">
-                <thead>
-                  <tr class="text-center">
-                    <th>STT</th>
-                    <th>TÊN THƯƠNG HIỆU</th>
-                    <th>ƯU ĐÃI</th>
-                    <th>BÁO GIÁ</th>
-                    <th>ĐÃ THU</th>
-                    <th>CHƯA THU</th>
-                    <th>HÀNH ĐỘNG</th>
-                  </tr>
-                </thead>
-                @php $i=1 @endphp
-                <tbody>
-                  @foreach($client->courseStudents as $data)
-                  <tr>
-                  <td class="text-center">{{ $i++ }}</td>
-                    <td>{!!$data->course->linkName()!!}</td>
-                    <td class="text-center">{{$data->deal_rate}}%</td>
-                    <td class="text-right">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
-                    <td class="text-right">{{MoneyFormat($data->tuition_done)}}</td>
-                    <td class="text-right">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
-                    <td class="text-center"><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
-                  </tr>
-                  @endforeach
-                  </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-        </div>
         </div>
         <!-- /.card -->
       </div>
