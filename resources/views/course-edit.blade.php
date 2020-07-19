@@ -82,17 +82,9 @@
                     <label>Ngày trả File thiết kế:</label>
                     <input type="text" class="form-control" name="schedule" value="{{$course->schedule}}" required>
                   </div>
-                  <!--<div class="form-group col-md-12">
+                  <div class="form-group col-md-12">
                     <label>Giáo viên</label>
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
-                  </div>-->
-                  <div class="form-group">
-                    <label for="staff_id">Người thiết kế:</label>
-                    <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
-                      @foreach ($staffs as $data)
-                      <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
-                      @endforeach
-                    </select>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Số người thiết kế:</label>

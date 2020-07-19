@@ -86,19 +86,9 @@
                     <label>Số người tham gia dự án:</label>
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
                   </div>
-                  <!--
                   <div class="form-group col-md-12">
-                    <label>Thiết kế:</label>
+                    <label>Người thiết kế:</label>
                     <input type="text" class="form-control" name="teacher" value="{{ old('teacher') }}" required>
-                  </div>
-                -->
-                  <div class="form-group">
-                    <label for="staff_id">Người thiết kế:</label>
-                    <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
-                      @foreach ($staffs as $data)
-                      <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
-                      @endforeach
-                    </select>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Báo giá:</label>
