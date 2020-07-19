@@ -67,13 +67,13 @@
                 @foreach($courses as $course)
                 <a href="{{$course->id}}">
                 <tr>
-                  <td>@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
+                  <td class="text-center">@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
                   <td>{!! $course->linkName() !!}</a></td>
                   <td>{{ $course->shortname }}</td>
                   <!--<td>{{ number_format($course->tuition,0,",",".") }}</td>-->
-                  <td>{{ $course->lesson }}</td>
-                  <td>{{ $course->schedule }}</td>
-                  <td>{{ $course->tuition }}</td>
+                  <td class="text-center">{{ $course->lesson }}</td>
+                  <td class="text-center">{{ $course->schedule }}</td>
+                  <td class="text-center">{{ $course->tuition }}</td>
                   <!--
                   <td>
                     @if( $course->isDone() )
@@ -116,19 +116,19 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Lớp học dự kiến mở chưa có lịch</h3>
+              <h3 class="card-title">Danh sách khách hàng đặt in ấn</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Khai giảng</th>
-                  <th>Mã lớp học</th>
-                  <th>Tên</th>
-                  <th>Học phí</th>
-                  <th>Số buổi</th>
-                  <th>Lịch học</th>
+                <tr class="text-center">
+                  <th>Ngày nhận</th>
+                  <th>Tên khách hàng</th>
+                  <th>Đơn vị</th>
+                  <th>Báo giá</th>
+                  <th>Thời gian in ấn</th>
+                  <th>Ngày nhận</th>
                   <th>Số lượng hiện tại</th>
                   <th></th>
                 </tr>
@@ -137,10 +137,10 @@
                 @foreach($expected_courses as $course)
                 <a href="{{$course->id}}">
                 <tr>
-                  <td>@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
+                  <td class="text-center">@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
                   <td>{{ $course->shortname }}</td>
                   <td>{!! $course->linkName() !!}</a></td>
-                  <td>{{ number_format($course->tuition,0,",",".") }}</td>
+                  <td >{{ number_format($course->tuition,0,",",".") }}</td>
                   <td>{{ $course->lesson }}</td>
                   <td>{{ $course->schedule }}</td>
                   <td>
