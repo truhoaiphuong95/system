@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DELI | THÊM DỰ ÁN</title>
+<title>DELI | Thêm thông tin dự án</title>
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @stop
@@ -14,12 +14,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>THÊM DỰ ÁN</h1>
+          <h1>THÊM THÔNG TIN DỰ ÁN</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Thêm dự án</li>
+            <li class="breadcrumb-item active">Thêm thông tin dự án</li>
           </ol>
         </div>
       </div>
@@ -42,16 +42,16 @@
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Thêm dự án</h3>
+                <h3 class="card-title">Thêm thông tin dự án</h3>
               </div>
               <div class="card-body">
                 <div class="col-md-12">
                   <div class="form-group col-md-12">
-                    <label>Tên dự án:</label>
+                    <label>Tên khách hàng:</label>
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Mã dự án:</label>
+                    <label>Tên đơn vị:</label>
                     <input type="text" class="form-control" name="shortname" value="{{ old('shortname') }}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
@@ -63,7 +63,7 @@
                   </div>
                   <hr>
                   <div class="form-group col-md-12">
-                    <label>Nhóm dịch vụ:</label>
+                    <label>Nhóm dự án:</label>
                     <select name="course_group_id" class="select2" data-placeholder="Select a State" style="width: 100%;">
                       @foreach($course_groups as $data)
                       <option value="{{$data->id}}">{{$data->name}}</option>
@@ -71,19 +71,19 @@
                     </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Thời gian thiết kế:</label>
+                    <label>Thời gian thiết kế (Không tính ngày lễ - Chủ nhật):</label>
                     <input type="number" class="form-control" name="lesson" value="{{ old('lesson') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày nhận dự án:</label>
+                    <label>Ngày nhận thiết kế:</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{ old('opening_at') }}">
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày bàn giao thiết kế:</label>
+                    <label>Ngày bàn giao File thiết kế:</label>
                     <input type="text" class="form-control" name="schedule" value="{{ old('schedule') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Số người tham gia dự án:</label>
+                    <label>Số người tham gia thiết kế:</label>
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
                   </div>
                   <div class="form-group col-md-12">

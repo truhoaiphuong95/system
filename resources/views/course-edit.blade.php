@@ -79,16 +79,12 @@
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{date('Y-m-d', strtotime($course->opening_at))}}">
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày trả File thiết kế:</label>
+                    <label>Ngày bàn giao File thiết kế:</label>
                     <input type="text" class="form-control" name="schedule" value="{{$course->schedule}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Giáo viên</label>
+                    <label>Người thiết kế:</label>
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label>Số người thiết kế:</label>
-                    <input type="number" class="form-control" name="maxseat" value="{{$course->maxseat}}" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Báo giá:</label>
