@@ -205,7 +205,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($client->tickets as $data)
+                @foreach($students->tickets as $data)
                 <tr>
                   <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
                   <td class="text-center">{{$data->id}}</td>
