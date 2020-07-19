@@ -87,6 +87,10 @@
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
                   </div>
                   <div class="form-group col-md-12">
+                    <label>Số người tham gia thiết kế:</label>
+                    <input type="number" class="form-control" name="maxseat" value="{{$course->maxseat}}" required>
+                  </div>
+                  <div class="form-group col-md-12">
                     <label>Báo giá:</label>
                     <input type="number" class="form-control" name="tuition" value="{{$course->tuition}}" required>
                   </div>

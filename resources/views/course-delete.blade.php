@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm lớp học mới</title>
+<title>DELI | Xóa dự án</title>
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @stop
@@ -46,7 +46,7 @@
           <div class="col-md-12">
             <div class="card card-default">
               <div class="card-header">
-                <h3 class="card-title">Xác nhận xoá lớp</h3>
+                <h3 class="card-title">Xác nhận xoá dự án</h3>
               </div>
               <div class="card-body">
                 <div class="col-md-12">
