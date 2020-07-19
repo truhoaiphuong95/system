@@ -87,7 +87,7 @@
                   <td>
                     {{ $course->teacher }}
                   </td>
-                  <td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.course.view.get', ['course_id' => $course->id])}}" class="btn btn-primary">Xem</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -130,7 +130,7 @@
                   <th>Thời gian in ấn</th>
                   <th>Ngày nhận</th>
                   <th>Số lượng hiện tại</th>
-                  <th></th>
+                  <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -151,7 +151,7 @@
                     @endif
                     {{ $course->sumDone() }}/{{ $course->sum() }}/{{ $course->maxseat }}</span>
                   </td>
-                  <td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.course.view.get', ['course_id' => $course->id])}}" class="btn btn-primary">Xem</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
