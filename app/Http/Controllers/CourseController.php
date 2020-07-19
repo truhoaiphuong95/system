@@ -77,7 +77,7 @@ class CourseController extends Controller
             return redirect()->back()->withErrors('Xác nhận sai, xin thử lại!');
         }
 
-        CourseStudentwhere('course_id', $course_id)->delete();
+        CourseStudentController('course_id', $course_id)->delete();
         $course->delete();
 
         return redirect()->route('staff.course.list.get')->with('success', 'Xoá lớp thành công!');
