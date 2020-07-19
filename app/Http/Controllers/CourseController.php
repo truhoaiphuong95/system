@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 use Core\Services\CourseServiceContract;
 use Core\Services\CourseRelatedService;
 use App\Models\CourseStudent;
-use App\Models\Client;
-use App\Models\Receipt;
-use App\Models\Field;
-use App\Models\Staff;
 
 class CourseController extends Controller
 {
@@ -25,9 +21,6 @@ class CourseController extends Controller
     public function getList() {
         $data['courses'] = $this->service->list();
         $data['expected_courses'] = $this->service->getExpected();
-        $data['branches'] = branch::all();
-        $data['staffs'] = staff::all();
-        $data['fields'] = field::all();
         return view('course-list', $data);
     }
     
