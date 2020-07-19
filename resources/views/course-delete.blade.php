@@ -14,12 +14,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>XOÁ LỚP HỌC</h1>
+          <h1>XÁC NHẬN XÓA DỰ ÁN</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập lớp học</li>
+            <li class="breadcrumb-item active">Xác nhận xóa dự án</li>
           </ol>
         </div>
       </div>
@@ -38,7 +38,7 @@
       @endif
       <div class="alert alert-warning alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-warning"></i> Cẩn thận!</h4> Bạn có chắc muốn xoá lớp này không? Nếu có, hãy điền <b>{{ $course->shortname }}</b> vào ô xác nhận!
+        <h4><i class="icon fa fa-warning"></i> Cẩn thận!</h4> Bạn có chắc muốn xoá dự án này không? Nếu có, hãy điền <b>{{ $course->shortname }}</b> vào ô xác nhận!
       </div>
       <form action="{{route('staff.course.delete.post', ['course_id' => $course->id])}}" method="post">
         {{csrf_field()}}
