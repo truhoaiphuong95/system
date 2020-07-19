@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Danh sách các lớp</title>
+<title>DELI | Danh sách dự án</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -28,12 +28,12 @@
         @endif
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DANH SÁCH CÁC LỚP HỌC</h1>
+            <h1>DANH SÁCH CÁC DỰ ÁN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Danh sách lớp</li>
+              <li class="breadcrumb-item active">Danh sách dự án</li>
             </ol>
           </div>
         </div>
@@ -46,21 +46,21 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Danh sách các lớp học</h3>
+              <h3 class="card-title">Danh sách dự án</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Khai giảng</th>
-                  <th>Mã lớp học</th>
-                  <th>Tên</th>
-                  <th>Học phí</th>
-                  <th>Số buổi</th>
-                  <th>Lịch học</th>
-                  <th>Số lượng hiện tại</th>
-                  <th></th>
+                <tr class="text-center">
+                  <th>Ngày nhận</th>
+                  <th>Khách hàng</th>
+                  <th>Đơn vị</th>
+                  <th>Thời gian thiết kế</th>
+                  <th>Ngày bàn giao File</th>
+                  <th>Báo giá</th>
+                  <th>Người thiết kế</th>
+                  <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,11 +68,13 @@
                 <a href="{{$course->id}}">
                 <tr>
                   <td>@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
-                  <td>{{ $course->shortname }}</td>
                   <td>{!! $course->linkName() !!}</a></td>
-                  <td>{{ number_format($course->tuition,0,",",".") }}</td>
+                  <td>{{ $course->shortname }}</td>
+                  <!--<td>{{ number_format($course->tuition,0,",",".") }}</td>-->
                   <td>{{ $course->lesson }}</td>
                   <td>{{ $course->schedule }}</td>
+                  <td>{{ $course->tuition }}</td>
+                  <!--
                   <td>
                     @if( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
@@ -80,6 +82,10 @@
                     <span style="width: 88px;" class="btn btn-warning">
                     @endif
                     {{ $course->sumDone() }}/{{ $course->sum() }}/{{ $course->maxseat }}</span>
+                  </td>
+                  -->
+                  <td>
+                    {{ $course->teacher }}
                   </td>
                   <td>
                     <div class="btn-group">

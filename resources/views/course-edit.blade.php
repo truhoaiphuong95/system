@@ -59,7 +59,7 @@
                     <div class="custom-control custom-checkbox">
                       <input type='hidden' value='0' name='is_expected'>
                       <input class="custom-control-input" name="is_expected" type="checkbox" id="customCheckbox1" value="1" @if($course->is_expected) checked @endif>
-                      <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là lớp dự kiến</label>
+                      <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu có in ấn</label>
                     </div>
                   </div>
                   <div class="form-group col-md-12">
