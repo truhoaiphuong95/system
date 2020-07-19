@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Danh sách lớp</title>
+<title>DELI | Danh sách dự án</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -21,12 +21,12 @@
       @endif
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>DANH SÁCH HỌC VIÊN</h1>
+          <h1>THÔNG TIN KHÁCH HÀNG ĐẶT THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Danh sách học viên</li>
+            <li class="breadcrumb-item active">Thông tin khách hàng đặt thiết kế</li>
           </ol>
         </div>
       </div>
@@ -44,29 +44,29 @@
               <img class="img-circle elevation-2" src="{{secure_asset('images/course-avt.png')}}" alt="User Avatar">
             </div>
             <!-- /.widget-user-image -->
-            <h3 class="widget-user-username">{{$course->name}}</h3>
-            <h5 class="widget-user-desc">{{$course->schedule}}</h5>
+            <h3 class="widget-user-username">TÊN KHÁCH HÀNG: {{$course->name}}</h3>
+            <h5 class="widget-user-desc">Đơn vị: {{$course->schedule}}</h5>
           </div>
           <div class="card-body p-0">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Khai giảng <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
+                  Ngày nhận: <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Học phí <span class="float-right">{{ MoneyFormat($course->tuition) }}</span>
+                  Báo giá: <span class="float-right">{{ MoneyFormat($course->tuition) }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Số tiết <span class="float-right">{{$course->lesson}}</span>
+                  Thời gian thiết kế: <span class="float-right">{{$course->lesson}}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Giảng viên <span class="float-right">{{$course->teacher}}</span>
+                  Người thiết kế: <span class="float-right">{{$course->teacher}}</span>
                 </div>
               </li>
             </ul>
@@ -75,13 +75,13 @@
             <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
             <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
             <div class="btn-group float-right">
-              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
+              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin</a>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá lớp</a>
+                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá</a>
               </div>
             </div>
           </div>
@@ -135,35 +135,35 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Lớp {{$course->name}}</h3>
+            <h3 class="card-title">TÊN KHÁCH HÀNG: {{$course->name}}</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th>STT</th>
                   <th>Tên khách hàng</th>
                   <th>Số điện thoại</th>
                   <th>Ưu đãi</th>
-                  <th>Học phí</th>
+                  <th>Báo giá</th>
                   <th>Đã thu</th>
                   <th>Chưa thu</th>
                   <th>Ghi chú</th>
-                  <th></th>
+                  <th>Hành động</th>
                 </tr>
               </thead>
               <tbody>
               @php $i=1 @endphp 
                 @foreach($students as $data)
                 <tr>
-                  <td>{{ $i++ }}</td>
+                  <td class="text-center">{{ $i++ }}</td>
                   <td>{!! $data->client->linkName() !!}</td>
-                  <td>{!! $data->client->linkPhone() !!}</td>
-                  <td>{{ $data->deal_rate }}%</td>
-                  <td>{{ MoneyFormat(TuitionAfter($course->tuition, $data->deal_rate)) }}</td>
-                  <td>{{ MoneyFormat($data->tuition_done) }}</td>
-                  <td>
+                  <td class="text-center">{!! $data->client->linkPhone() !!}</td>
+                  <td class="text-center">{{ $data->deal_rate }}%</td>
+                  <td class="text-right">{{ MoneyFormat(TuitionAfter($course->tuition, $data->deal_rate)) }}</td>
+                  <td class="text-right">{{ MoneyFormat($data->tuition_done) }}</td>
+                  <td class="text-right">
                   @if($data->tuition_done > 0)
                     @if( $data->tuition_done >= TuitionAfter($course->tuition, $data->deal_rate) ) 
                       <span class="badge bg-success">HOÀN THÀNH</span>
@@ -183,7 +183,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" href="{{route('staff.coursestudent.delete.get', ['coursestudent_id' => $data->id])}}">Xóa khỏi lớp</a>
+                        <a class="dropdown-item" href="{{route('staff.coursestudent.delete.get', ['coursestudent_id' => $data->id])}}">Xóa</a>
                       </div>
                     </div>
                   </td>
