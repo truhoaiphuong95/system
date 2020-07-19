@@ -61,12 +61,12 @@
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Thời gian thiết kế: <span class="float-right">{{$course->lesson}}</span>
+                  Thời gian thiết kế: <span class="float-right">{{$course->lesson}} ngày</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Người thiết kế: <span class="float-right">{{$course->teacher}}</span>
+                  Người thiết kế: <span class="float-right"><b class="text-uppercase">{{$course->teacher}}</b></span>
                 </div>
               </li>
             </ul>
@@ -158,7 +158,7 @@
                 @foreach($students as $data)
                 <tr>
                   <td class="text-center">{{ $i++ }}</td>
-                  <td>{!! $data->client->linkName() !!}</td>
+                  <td class="text-uppercase">{!! $data->client->linkName() !!}</td>
                   <td class="text-center">{!! $data->client->linkPhone() !!}</td>
                   <td class="text-center">{{ $data->deal_rate }}%</td>
                   <td class="text-right">{{ MoneyFormat(TuitionAfter($course->tuition, $data->deal_rate)) }}</td>
@@ -175,7 +175,7 @@
                   @endif
                   </td>
                   <td>{{$data->deal_note}}</td>
-                  <td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -193,6 +193,32 @@
             </table>
           </div>
           <!-- /.card-body -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr class="text-center">
+                  <th>NGÀY NHẬN</th>
+                  <th>SỐ PHIẾU</th>
+                  <th>TÊN THƯƠNG HIỆU</th>
+                  <th>TIẾN ĐỘ THIẾT KẾ</th>
+                  <th>HÀNH ĐỘNG</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($client->tickets as $data)
+                <tr>
+                  <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                  <td class="text-center">{{$data->id}}</td>
+                  <td>{{$data->model}}</td>
+                  <td class="text-right">
+                    <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
+                  </td>
+                  <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                </tr>
+                @endforeach
+                </tfoot>
+            </table>
+          </div>
         </div>
         <!-- /.card -->
       </div>
