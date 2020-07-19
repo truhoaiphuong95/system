@@ -193,32 +193,6 @@
             </table>
           </div>
           <!-- /.card-body -->
-          <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr class="text-center">
-                  <th>NGÀY NHẬN</th>
-                  <th>SỐ PHIẾU</th>
-                  <th>TÊN THƯƠNG HIỆU</th>
-                  <th>TIẾN ĐỘ THIẾT KẾ</th>
-                  <th>HÀNH ĐỘNG</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($students->tickets as $data)
-                <tr>
-                  <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
-                  <td class="text-center">{{$data->id}}</td>
-                  <td>{{$data->model}}</td>
-                  <td class="text-right">
-                    <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
-                  </td>
-                  <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
-                </tr>
-                @endforeach
-                </tfoot>
-            </table>
-          </div>
         </div>
         <!-- /.card -->
       </div>
