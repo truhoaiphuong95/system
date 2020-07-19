@@ -13,7 +13,7 @@ class TicketLogController extends Controller
 {
     protected $model;
     protected $service;
-    public function __construct(ticket_log $model, TicketLogServiceContract $service)
+    public function __construct(TicketLog $model, TicketLogServiceContract $service)
     {
         $this->model = $model;
         $this->service = $service;

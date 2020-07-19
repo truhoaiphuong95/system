@@ -48,11 +48,11 @@
               <div class="card-body">
                 <div class="col-md-12">
                   <div class="form-group col-md-12">
-                    <label>Tên lớp học</label>
+                    <label>Tên khách hàng:</label>
                     <input type="text" class="form-control" name="name" value="{{$course->name}}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Mã lớp học</label>
+                    <label>Tên đơn vị:</label>
                     <input type="text" class="form-control" name="shortname" value="{{$course->shortname}}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
@@ -63,7 +63,7 @@
                     </div>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Nhóm môn học</label>
+                    <label>Nhóm dự án:</label>
                     <select name="course_group_id" class="select2" data-placeholder="Select a State" style="width: 100%;">
                       @foreach($course_groups as $data)
                       <option value="{{$data->id}}" @if($data->id == $course->course_group_id) checked @endif >{{$data->name}}</option>
@@ -71,31 +71,39 @@
                     </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Số buổi</label>
+                    <label>Thời gian thiết kế (Không tính ngày lễ - Chủ nhật):</label>
                     <input type="number" class="form-control" name="lesson" value="{{$course->lesson}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày khai giảng</label>
+                    <label>Ngày nhận thiết kế:</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{date('Y-m-d', strtotime($course->opening_at))}}">
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Lịch học (Thứ - Tiết)</label>
+                    <label>Ngày trả File thiết kế:</label>
                     <input type="text" class="form-control" name="schedule" value="{{$course->schedule}}" required>
                   </div>
-                  <div class="form-group col-md-12">
+                  <!--<div class="form-group col-md-12">
                     <label>Giáo viên</label>
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
+                  </div>-->
+                  <div class="form-group">
+                    <label for="staff_id">Người thiết kế:</label>
+                    <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
+                      @foreach ($staffs as $data)
+                      <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Sỉ số</label>
+                    <label>Số người thiết kế:</label>
                     <input type="number" class="form-control" name="maxseat" value="{{$course->maxseat}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Học phí</label>
+                    <label>Báo giá:</label>
                     <input type="number" class="form-control" name="tuition" value="{{$course->tuition}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ giáo viên xem)</label>
+                    <label>Ghi chú:</label>
                     <input type="text" class="form-control" name="note" value="{{$course->note}}">
                   </div>
                 </div>
