@@ -48,14 +48,10 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label>Tên Khách Hàng:</label> {{  $client->name }}   |   
+              <label>Tên Khách hàng:</label> {{  $client->name }}   |   
               <label>Số Điện Thoại:</label> {{ $client->phone }}    |    
               <label>Ngày Sinh:</label> {{ $client->birthday }}
               <input name="client_id" type="hidden" class="form-control" value="{{ $client->id }}">
-            </div>
-            <div class="form-group">
-              <label for="id">Số lai:</label>
-              <input name="id" type="number" class="form-control" id="id" placeholder="Số lai" readonly="readonly">
             </div>
             <div class="form-group">
               <label for="content">Nội dung thu:</label>

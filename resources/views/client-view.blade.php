@@ -154,10 +154,10 @@
                   <td class="text-center">{{ $i++ }}</td>
                     <td>{!!$data->course->linkName()!!}</td>
                     <td class="text-center">{{$data->deal_rate}}%</td>
-                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
-                    <td>{{MoneyFormat($data->tuition_done)}}</td>
-                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
-                    <td><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
+                    <td class="text-right">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
+                    <td class="text-right">{{MoneyFormat($data->tuition_done)}}</td>
+                    <td class="text-right">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
+                    <td class="text-center"><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
