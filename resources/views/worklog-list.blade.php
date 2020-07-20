@@ -36,7 +36,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách báo cáo công việc hàng ngày</h3>
+              <h3 class="card-title">DANH SÁCH BÁO CÁO CÔNG VIỆC HÀNG NGÀY</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -55,7 +55,7 @@
                       <tr>
                         <td class="text-center">{{date('d/m/Y',strtotime($worklog->date))}}</td>
                         <td class="text-center">{{$session[$worklog->session]}}</td>
-                        <td>{{$worklog->staff->name}}</td>
+                        <td class="text-uppercase"><b>{{$worklog->staff->name}}</b></td>
                         <td>@if($worklog->staff->id == UserInfo()->id) {!!$worklog->content!!} @endif @if(UserInfo()->isManager()) {!!$worklog->content!!} @endif</td>
                         <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->id])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif</td>
                       </tr>
