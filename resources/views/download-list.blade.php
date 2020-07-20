@@ -89,7 +89,7 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-        "ordering": false,
+      "order": [[0, 'desc']],
         "language": {
         	"sProcessing":   "Đang xử lý...",
         	"sLengthMenu":   "Xem _MENU_ mục",
