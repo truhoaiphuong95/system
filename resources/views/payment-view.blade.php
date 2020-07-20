@@ -83,9 +83,23 @@
             </div>
           </div>
           <div class="card card-footer">
-            <div class="col-12">
-              <a href="{{ route('staff.payment.edit.get', ['payment_id' => $payment->id]) }}" class="btn btn-default">Sửa phiếu chi</a>
-              <a href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}" class="text-danger ml-2">Xoá</a>
+            <div class="row">
+              <div class="col-6">
+                <a href="{{ route('staff.receipt.list.get') }}" class="btn btn-warning">Quay lại</a>
+              </div>
+              <div class="col-6">
+                <div class="btn-group">
+                    <a href="{{ route('staff.payment.edit.get', ['payment_id' => $payment->id]) }}" class="btn btn-primary">Sửa phiếu chi</a>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                      <a class="dropdown-item" href="{{route('staff.payment.print.get', ['payment_id' => $data->id])}}" target="_blank">In phiếu chi</a>
+                    </div>
+                </div>
+                <a href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}" class="text-danger ml-2">Xoá</a>
+              </div>
             </div>
           </div>
         </div>
