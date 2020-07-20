@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sổ phiếu chi</title>
+<title>DELI | Danh sách phiếu chi</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ PHIẾU CHI</h1>
+            <h1>DANH SÁCH PHIẾU CHI</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sổ phiếu chi</li>
+              <li class="breadcrumb-item active">Danh sách phiếu chi</li>
             </ol>
           </div>
         </div>
@@ -35,26 +35,28 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Thời gian</th>
-                  <th>Phân loại</th>
-                  <th>Số lai</th>
-                  <th>Người nộp</th>
-                  <th>Nội dung</th>
-                  <th>Số tiền</th>
-                  <th></th>
+                <tr class="text-center">
+                  <th>NGÀY NHẬP</th>
+                  <th>DANH MỤC</th>
+                  <th>SỐ LAI</th>
+                  <th>NGƯỜI NỘP</th>
+                  <th>NGƯỜI NHẬN</th>
+                  <th>NỘI DUNG</th>
+                  <th>SỐ TIỀN</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($payments->reverse() as $data)
                 <tr>
-                  <td>{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
-                  <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
-                  <td>{{$data->number}}</td>
+                  <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                  <td class="text-center"><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
+                  <td class="text-center">{{$data->id}}</td>
+                  <td>{{$data->staff->name}}</td>
                   <td>{{$data->client->name}}</td>
                   <td>{{$data->content}}</td>
-                  <td>{{number_format($data->amount,0,",",".")}} ₫</td>
-                  <td><a href="{{route('staff.payment.view.get', ['payment_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                  <td class="text-right">{{number_format($data->amount,0,",",".")}} ₫</td>
+                  <td class="text-center"><a href="{{route('staff.payment.view.get', ['payment_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach
                 </tfoot>

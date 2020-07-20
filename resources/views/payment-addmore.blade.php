@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập phiếu chi mới</title>
+<title>DELI | Nhập thông tin phiếu chi</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>NHẬP PHIẾU CHI</h1>
+          <h1>NHẬP THÔNG TIN PHIẾU CHI</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập phiếu chi</li>
+            <li class="breadcrumb-item active">Nhập thông tin phiếu chi</li>
           </ol>
         </div>
       </div>
@@ -47,10 +47,6 @@
         <form role="form" action="{{route('staff.payment.add.post')}}" method="post">
           {{csrf_field()}}
           <div class="card-body">
-            <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
-            </div>
             <div class="form-group">
               <label for="content">Nội dung chi:</label>
               <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Chi mua trà sữa" autofocus required>
@@ -88,7 +84,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="subfield_id">Danh muc con:</label>
+              <label for="subfield_id">Danh muc:</label>
               <select name="subfield_id" id="subfield_id" class="form-control select2" style="width: 100%;">
                 <option value="subfieldkey">subfieldname</option>
               </select>

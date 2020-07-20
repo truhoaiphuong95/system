@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập phiếu chi mới</title>
+<title>DELI | Nhập phiếu chi</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>NHẬP PHIẾU CHI</h1>
+          <h1>NHẬP THÔNG TIN PHIẾU CHI</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập phiếu chi</li>
+            <li class="breadcrumb-item active">Nhập thông tin phiếu chi</li>
           </ol>
         </div>
       </div>
@@ -54,10 +54,6 @@
               <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
             </div>
             <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
-            </div>
-            <div class="form-group">
               <label for="content">Nội dung chi:</label>
               <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Chi mua trà sữa" autofocus required>
             </div>
@@ -86,7 +82,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="field_id">Danh muc thu:</label>
+              <label for="field_id">Danh muc:</label>
               <select name="field_id" id="inputPhieuthuDanhmuc" class="form-control select2" style="width: 100%;">
                 @foreach ($fields as $data)
                 <option value="{{$data->id}}">{{$data->name}}</option>

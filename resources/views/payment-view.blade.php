@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Xem phiếu chi #{{$payment->number}}</title>
+<title>DELi | Xem phiếu chi #{{$payment->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
@@ -17,7 +17,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Xem phiếu chi</li>
+            <li class="breadcrumb-item active">Xem thông tin phiếu chi</li>
           </ol>
         </div>
       </div>
@@ -35,7 +35,7 @@
               <div class="col-12">
                 <h4>
                   <i class="fa fa-globe"></i>  <b>PHIẾU CHI</b>
-                  <small class="float-right"><b>SỐ PHIẾU #{{ $payment -> number }}</b></small>
+                  <small class="float-right"><b>SỐ PHIẾU #{{ $payment->id }}</b></small>
                 </h4>
               </div>
               <!-- /.col -->
@@ -43,7 +43,7 @@
             <!-- info row -->
             <div class="row invoice-info">
               <div class="col-md-6 invoice-col">
-                <u>Thông tin phiếu chi:</u>
+                <u>THÔNG TIN PHIẾU CHI:</u>
                 <address>
                   <strong class="text-uppercase"><a href="/xemkhachhang/{{$payment->client->id}}">{{$payment->client->name}}</a></strong><br>
                   <b>Số điện thoại: </b><a href="tel:{{$payment->client->sdt}}">{{PhoneFormat($payment->client->phone)}}</a><br>
@@ -65,7 +65,7 @@
               <div class="col-12 table-responsive">
                 <table class="table table-striped table table-bordered">
                   <thead>
-                    <tr>
+                    <tr class="text-center">
                       <th>STT</th>
                       <th>Dịch vụ</th>
                       <th>Thành tiền</th>
@@ -73,9 +73,9 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="text-uppercase">1</td>
+                      <td class="text-uppercase text-center">1</td>
                       <td class="text-uppercase">{{ $payment -> content }}</td>
-                      <td class="text-uppercase">{{ number_format($payment -> amount,0,",",".") }}</td>
+                      <td class="text-uppercase text-right">{{ number_format($payment -> amount,0,",",".") }}</td>
                     </tr>
                   </tbody>
                 </table>

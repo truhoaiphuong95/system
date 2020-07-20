@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sửa phiếu chi #{{$payment->number}}</title>
+<title>DELI | Sửa thông tin phiếu chi #{{$payment->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,7 +11,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>NHẬP PHIẾU CHI</h1>
+          <h1>THAY ĐỔI THÔNG TIN PHIẾU CHI</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -40,7 +40,7 @@
     <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Nhập thông tin phiếu chi</h3>
+          <h3 class="card-title">Thay đổi thông tin phiếu chi</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -48,15 +48,11 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="inputSostt">Tên người nhận:</label> {{$payment->client -> name}}   |   
-              <label for="inputSostt">Số Điện Thoại:</label> {{$payment->client -> phone}}    |    
-              <label for="inputSostt">Ngày Sinh:</label> {{$payment->client -> birthday}}
+              <label for="inputSostt">Tên người nhận:</label> {{$payment->client->name}}   |   
+              <label for="inputSostt">Số điện thoại:</label> {{$payment->client->phone}}    |    
+              <label for="inputSostt">Ngày sinh:</label> {{$payment->client->birthday}}
               <input name="payment_id" type="hidden" class="form-control" value="{{$payment->id}}">
               <input name="client_id" type="hidden" class="form-control" value="{{$payment->client->id}}">
-            </div>
-            <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" value="{{$payment->number}}" autofocus required>
             </div>
             <div class="form-group">
               <label for="content">Nội dung chi:</label>
@@ -87,7 +83,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="field_id">Danh muc thu:</label>
+              <label for="field_id">Danh muc:</label>
               <select name="field_id" id="inputPhieuthuDanhmuc" class="form-control select2" style="width: 100%;">
                 @foreach ($fields as $data)
                 <option value="{{$data->id}}" @if($payment->field_id == $data->id) selected="selected" @endif >{{$data->name}}</option>
