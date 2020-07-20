@@ -43,9 +43,10 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr class="text-center">
-                        <th>Thời gian</th>
-                        <th style="width: 200px;">Nhân sự</th>
-                        <th>Nội dung</th>
+                        <th>NGÀY</th>
+                        <th>BUỔI</th>
+                        <th style="width: 200px;">NGƯỜI BÁO CÁO</th>
+                        <th>NỘI DUNG</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -53,7 +54,7 @@
                       <tr>
                         <td>{{date('d/m/Y',strtotime($worklog->date))}}-{{$session[$worklog->session]}}</td>
                         <td>{{$worklog->staff->name}}</td>
-                        <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->id])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif{!!$worklog->content!!}</td>
+                        <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->id])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif{!!$worklog->staff->content!!}</td>
                       </tr>
                       @endforeach
                     </tbody>

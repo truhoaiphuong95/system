@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELi | Xem phiếu chi #{{$payment->number}}</title>
+<title>DELI | Xem phiếu chi #{{$payment->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
