@@ -57,7 +57,21 @@
                   <td>{{$data->content}}</td>
                   <td class="text-right">{{number_format($data->amount,0,",",".")}} ₫</td>
                   <td>{{$data->staff->name}}</td>
-                  <td class="text-center"><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                  <!--<td class="text-center"><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>-->
+                  <td>
+                    <div class="btn-group">
+                      <a href="{{route('staff.receipt.view.get', ['receipt_id' => $receipt->id])}}" class="btn btn-primary">Xem</a>
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" role="menu">
+                        <!--<a class="dropdown-item" href="{{route('staff.receipt.printpos.get', ['receipt_id' => $receipt->id])}}" target="_blank">In máy POS</a>
+                        <a class="dropdown-item" href="{{route('staff.receipt.printinternal.get', ['receipt_id' => $receipt->id])}}" target="_blank">In phiếu dán</a>-->
+                        <a class="dropdown-item" href="{{route('staff.receipt.print.get', ['receipt_id' => $receipt->id])}}" target="_blank">In biên nhận</a>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
                 @endforeach
                 </tfoot>
