@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Client;
 use App\Models\Course;
+use App\Models\Staff;
 use App\Models\CourseStudent;
 use Core\Services\CourseStudentServiceContract;
 use Core\Services\ClientServiceContract;
@@ -29,6 +30,7 @@ class CourseStudentController extends Controller
     public function getAdd($client_id) {
         $data['client'] = client::findOrFail($client_id);
         $data['courses'] = course::all();
+        $data['staffs'] = staff::all();
         return view('student-add', $data);
     }
 
@@ -54,6 +56,6 @@ class CourseStudentController extends Controller
     public function getDelete($student_id) {
         $student = $this->service->find($student_id);
         $student->delete();
-        return redirect()->back()->with('success', 'Đã xóa khỏi lớp thành công!');
+        return redirect()->back()->with('success', 'Đã xóa thành công!');
     }
 }
