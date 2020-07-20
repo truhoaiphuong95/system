@@ -137,7 +137,7 @@
                 @foreach($expected_courses as $course)
                 <a href="{{$course->id}}">
                 <tr>
-                  <td class="text-center">@if($course->opening_at==NULL) Chưa rõ @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
+                  <td class="text-center">@if($course->opening_at==NULL) Chưa rõ @else {{ date("d/m/Y", strtotime($course->opening_at)) }} @endif</td>
                   <td>{{ $course->shortname }}</td>
                   <td>{!! $course->linkName() !!}</a></td>
                   <td class="text-right">{{ number_format($course->tuition,0,",",".") }}</td>
