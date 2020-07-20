@@ -95,10 +95,10 @@
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu">
-                      <a class="dropdown-item" href="#" target="_blank">In phiếu chi</a>
+                      <a class="dropdown-item" href="{{route('staff.payment.print.get', ['payment_id' => $payment->id])}}" target="_blank">In phiếu chi</a>
+                      <a class="dropdown-item text-danger" href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}">Xoá phiếu chi</a>
                     </div>
                 </div>
-                <a href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}" class="text-danger ml-2">Xoá</a>
               </div>
             </div>
           </div>
