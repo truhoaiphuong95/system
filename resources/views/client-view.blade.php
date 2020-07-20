@@ -70,7 +70,7 @@
                 <li class="list-group-item">
                   <b>EMAIL:</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item text-uppercase">
                   <b>NGÀNH NGHỀ KINH DOANH:</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
