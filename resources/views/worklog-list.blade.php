@@ -47,7 +47,7 @@
                         <th style="width: 200px;">BUỔI</th>
                         <th style="width: 200px;">NGƯỜI BÁO CÁO</th>
                         <th>NỘI DUNG</th>
-                        <th></th>
+                        <th style="width: 50px;">HÀNH ĐỘNG</th>
                       </tr>
                     </thead>
                     <tbody>
