@@ -47,6 +47,7 @@
                         <th style="width: 200px;">BUỔI</th>
                         <th style="width: 200px;">NGƯỜI BÁO CÁO</th>
                         <th>NỘI DUNG</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -55,7 +56,8 @@
                         <td class="text-center">{{date('d/m/Y',strtotime($worklog->date))}}</td>
                         <td class="text-center">{{$session[$worklog->session]}}</td>
                         <td>{{$worklog->staff->name}}</td>
-                        <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->content])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif @if(UserInfo()->isManager()) {!!$worklog->content!!} @endif</td>
+                        <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->id])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif @if(UserInfo()->isManager()) {!!$worklog->content!!} @endif</td>
+                        <td>@if($worklog->staff->id == UserInfo()->id) {!!$worklog->content!!} @endif Không nhìn thấy!!!</td>
                       </tr>
                       @endforeach
                     </tbody>
