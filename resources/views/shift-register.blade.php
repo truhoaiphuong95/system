@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Đăng ký ca làm việc</title>
+<title>DELI | Đăng ký lịch làm việc</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 <link rel="stylesheet" href="{{ secure_asset('plugins/iCheck/all.css') }}">
 @stop
@@ -14,12 +14,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>ĐĂNG KÝ CA LÀM VIỆC</h1>
+          <h1>ĐĂNG KÝ LỊCH LÀM VIỆC</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Đăng ký ca làm việc</li>
+            <li class="breadcrumb-item active">Đăng ký lịch làm việc</li>
           </ol>
         </div>
       </div>

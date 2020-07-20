@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Sửa học viên</title>
+<title>DELI | Thay đổi khách hàng</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
   
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỬA THÔNG TIN</h1>
+            <h1>THAY ĐỔI KHÁCH HÀNG</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhập lớp học</li>
+              <li class="breadcrumb-item active">Thay đổi khách hàng</li>
             </ol>
           </div>
         </div>
@@ -45,11 +45,23 @@
           <div class="card-body">
             <div class="col-md-12">
               <div class="form-group col-md-12">
-                <label>Tên học viên</label>
+                <label>TÊN KHÁCH HÀNG:</label>
                 <input type="text" class="form-control" value="{{$course_student->client->name}}" disabled>
               </div>
               <div class="form-group col-md-12">
-                <label>Chọn lớp học</label>
+                <label>TÊN KHÁCH HÀNG:</label>
+                <input type="text" class="form-control" value="{{$course_student->client->name}}" disabled>
+              </div>
+              <div class="form-group col-md-12">
+                <label>SỐ ĐIỆN THOẠI:</label>
+                <input type="text" class="form-control" value="{{$course_student->client->phone}}" disabled>
+              </div>
+              <div class="form-group col-md-12">
+                <label>NGÀNH NGHỀ KINH DOANH:</label>
+                <input type="text" class="form-control" value="{{$course_student->client->major}}" disabled>
+              </div>
+              <div class="form-group col-md-12">
+                <label>DỰ ÁN THIẾT KẾ:</label>
                 <select name="course_id" class="form-control select2" style="width: 100%;">
                   @foreach($courses as $data)
                   <option value="{{$data->id}}" @if($data->id==$course_student->course_id) selected="selected" @endif>{{$data->shortname}} - {{$data->name}}</option>
@@ -57,19 +69,27 @@
                 </select>
               </div>
               <div class="form-group col-md-12">
-                <label>Phần trăm ưu đãi (%)</label>
+                <label>PHẦN TRĂM ƯU ĐÃI:</label>
                 <input type="number" class="form-control" name="deal_rate" value="{{ $course_student->deal_rate }}" required>
               </div>
               <div class="form-group col-md-12">
-                <label>Số tiền đã thu</label>
+                <label>SỐ TIỀN ĐÃ THU:</label>
                 <input type="number" class="form-control" name="tuition_done" value="{{ $course_student->tuition_done }}" required>
               </div>
               <div class="form-group col-md-12">
-                <label>Chương trình ưu đãi</label>
+                <label>CHƯƠNG TRÌNH ƯU ĐÃI:</label>
                 <input type="textarea" class="form-control" name="deal_note" value="{{ $course_student->deal_note }}" placeholder="Ghi rõ nội dung ưu đãi" required>
               </div>
               <div class="form-group col-md-12">
-                <label>Ghi chú</label>
+                <label>NHÂN VIÊN:</label>
+                <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
+                  @foreach ($staffs as $data)
+                  <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label>GHI CHÚ:</label>
                 <input type="textarea" class="form-control" name="content" value="{{ $course_student->content }}" placeholder="Một vài dòng tâm sự...">
               </div>
             </div>

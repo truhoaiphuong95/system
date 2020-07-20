@@ -60,7 +60,7 @@
                   <td class="text-center">{{date("d/m/Y", strtotime($service->created_at))}}</td>
                   <td class="text-uppercase"><b>{{$service->name}}</b></td>
                   <td>{{$service->sku}}</td>
-                  <td class="text-right text-danger">{{MoneyFormat($service->price)}}</td>
+                  <td class="text-right text-danger"><b>{{MoneyFormat($service->price)}}</b></td>
                   <td class="text-center">{{$service->tickets_count}}</td>
                   <td class="text-center">
                     <div class="btn-group">

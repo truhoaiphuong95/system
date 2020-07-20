@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Quản lý ca làm việc</title>
+<title>DELI | Quản lý lịch làm việc</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 <link rel="stylesheet" href="{{ secure_asset('plugins/iCheck/all.css') }}">
 @stop
@@ -14,12 +14,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>QUẢN LÝ CA LÀM VIỆC</h1>
+          <h1>QUẢN LÝ LỊCH LÀM VIỆC</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Quản lý ca làm việc</li>
+            <li class="breadcrumb-item active">Quản lý lịch làm việc</li>
           </ol>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <div class="col-md-12">
           <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Lịch làm việc tuần này</h3>
+                <h3 class="card-title">LỊCH LÀM VIỆC TUẦN NÀY</h3>
               </div>
               <div class="card-body">
                 <table class="table table-bordered">
@@ -91,7 +91,7 @@
         <div class="col-md-12">
           <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Lịch làm việc tuần sau</h3>
+                <h3 class="card-title">LỊCH LÀM VIỆC TUẦN SAU</h3>
               </div>
               <div class="card-body">
                 <table class="table table-bordered">

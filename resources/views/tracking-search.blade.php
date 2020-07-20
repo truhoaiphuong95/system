@@ -4,7 +4,7 @@
   <div class="col-md-12">
     <div class="card card-info">
       <div class="card-header">
-        <h3 class="card-title">THEO DÕI TÌNH TRẠNG MÁY</h3>
+        <h3 class="card-title">THEO DÕI TIẾN ĐỘ THIẾT KẾ</h3>
       </div>
       <div class="card-body">
         <div class="col-md-12">
@@ -34,7 +34,7 @@
       <!-- /.card-header -->
       <div class="card-body">
         <dl class="dl-horizontal">
-          <dt>• Hệ thống theo dõi tình trạng máy</dt>
+          <dt>• Hệ thống theo dõi tiến độ thiết kế</dt>
           <dd>Vì hiểu được nỗi trăn trở của khách hàng khi gửi sửa chữa máy, hệ thống theo dõi luôn cập nhật thường xuyên và liên tục tình trạng sửa chữa để khách hàng theo dõi tình trạng máy của mình.</dd>
           <dt>• Tìm theo số điện thoại</dt>
           <dd>Quý khách hàng có thể nhập số điện thoại của bạn vào ô tìm kiếm ở trên để xem tất cả các biên nhận sửa chữa máy.</dd>
