@@ -26,7 +26,7 @@
           <div class="col-8 offset-md-4">
             <h2 class="page-header">
               <i class="fa fa-globe"></i>&nbsp;&nbsp;<b style="font-size:30pt">PHIẾU THU</b>
-              <small class="float-right"><b>SỐ PHIẾU #{{$receipt->$id }}</b></small>
+              <small class="float-right"><b>SỐ PHIẾU #{{$receipt->id }}</b></small>
             </h2>
           </div>
           <!-- /.col -->
@@ -36,24 +36,24 @@
           <div class="col-sm-6 invoice-col">
             {{$solien}}
             <address>
-              <strong>Trung tâm Đôrêmon Cần Thơ</strong><br>
-              C132/10A hẻm 132, đường 3 Tháng 2<br>
-              P. Hưng Lợi, Q. Ninh Kiều, TP. Cần Thơ<br>
-              <b>Số điện thoại:</b> 0888-141811 hoặc 096-1020-096<br>
-              <b>Email:</b> hotro@trungtamdoremon.com<br>
-              <b>Website:</b> trungtamdoremon.com / cuahangdoremon.com
+              <strong>CÔNG TY TNHH THIẾT KẾ DELI</strong><br>
+              Số H9B, đường Đinh Công Tráng<br>
+              P. Xuân Khánh, Q. Ninh Kiều, TP. Cần Thơ<br>
+              <b>Số điện thoại:</b> 097-151-7074 hoặc  094-294-7074<br>
+              <b>Email:</b> deli4ne1@gmail.com<br>
+              <b>Website:</b> deli4ne1.com
             </address>
           </div>
           <!-- /.col -->
-          <div class="col-sm-6 invoice-col">
-            <u>Thông tin khách hàng:</u>
+          <div class="col-sm-5 invoice-col">
+            <u>THÔNG TIN KHÁCH HÀNG:</u>
             <address>
               <strong class="text-uppercase">{{ $receipt->client->name }}</strong><br>
               <b>Số điện thoại:</b> {{ PhoneFormat($receipt->client->phone) }}<br>
-              <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client -> ngaysinh)) }}<br>
-              <b>Mã khách hàng:</b> {{ $receipt->client -> id }}<br>
-              <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
-              <b>Nhân viên:</b> {{ $receipt->staff->name }}
+              <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client->birthday)) }}<br>
+              <b>Mã khách hàng:</b> KH{{ $receipt->client->id }}<br>
+              <b>Ngày nhận:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+              <b>Nhân viên nhận:</b> {{ $receipt->staff->name }}
             </address>
           </div>
           <!-- /.col -->

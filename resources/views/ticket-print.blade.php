@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KING | In biên nhận</title>
+    <title>DELI | In biên nhận</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 -->
@@ -25,8 +25,8 @@
         <div class="row">
           <div class="col-8 offset-md-4">
             <h2 class="page-header">
-              <i class="fa fa-wrench"></i>  <b>BIÊN NHẬN SỬA CHỮA MÁY</b>
-              <small class="float-right"><b>SỐ PHIẾU #{{ $ticket -> id }}</b></small>
+              <i class="fa fa-wrench"></i>  <b>BIÊN NHẬN THIẾT KẾ</b>
+              <small class="float-right"><b>SỐ PHIẾU #{{ $ticket->id }}</b></small>
             </h2>
           </div>
           <!-- /.col -->
@@ -36,23 +36,23 @@
           <div class="col-sm-5 invoice-col">
             {{$solien}}
             <address>
-              <strong>Trung tâm Đôrêmon Cần Thơ</strong><br>
-              C132/10A hẻm 132, đường 3 Tháng 2<br>
-              P. Hưng Lợi, Q. Ninh Kiều, TP. Cần Thơ<br>
-              <b>Số điện thoại:</b> 0888-141811 hoặc 096-1020-096<br>
-              <b>Email:</b> hotro@trungtamdoremon.com<br>
-              <b>Website:</b> eduking.edu.vn / cuahangdoremon.com
+              <strong>CÔNG TY TNHH THIẾT KẾ DELI</strong><br>
+              Số H9B, đường Đinh Công Tráng<br>
+              P. Xuân Khánh, Q. Ninh Kiều, TP. Cần Thơ<br>
+              <b>Số điện thoại:</b> 097-151-7074 hoặc  094-294-7074<br>
+              <b>Email:</b> deli4ne1@gmail.com<br>
+              <b>Website:</b> deli4ne1.com
             </address>
           </div>
           <!-- /.col -->
           <div class="col-sm-5 invoice-col">
-            <u>Thông tin khách hàng:</u>
+            <u>THÔNG TIN KHÁCH HÀNG:</u>
             <address>
               <strong class="text-uppercase">{{ $ticket->client->name }}</strong><br>
               <b>Số điện thoại:</b> {{ PhoneFormat($ticket->client->phone) }}<br>
               <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($ticket->client->birthday)) }}<br>
               <b>Mã khách hàng:</b> KH{{ $ticket->client->id }}<br>
-              <b>Ngày nhận máy:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+              <b>Ngày nhận:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
               <b>Nhân viên nhận:</b> {{ $ticket->staff->name }}
             </address>
           </div>
@@ -69,7 +69,7 @@
           <div class="col-10">
             <address>
               <h5 class="text-uppercase">
-                  <b>Yêu cầu khách hàng:</b> {{ $ticket -> requestment }}
+                  <b>Yêu cầu khách hàng:</b> {{ $ticket->requestment }}
               </h5>
             </address>
           </div>
