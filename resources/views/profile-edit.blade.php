@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Thông tin cá nhân</title>
+<title>DELI | Thông tin cá nhân</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -34,7 +34,7 @@
               @endif
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Nhập thông tin khách hàng</h3>
+                <h3 class="card-title">Nhập thông tin cá nhân</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->

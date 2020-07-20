@@ -80,6 +80,6 @@ class CourseController extends Controller
         CourseStudentwhere('course_id', $course_id)->delete();
         $course->delete();
 
-        return redirect()->route('staff.course.list.get')->with('success', 'Xoá lớp thành công!');
+        return redirect()->route('staff.course.list.get')->with('success', 'Xoá thành công!');
     }
 }

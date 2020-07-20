@@ -43,6 +43,7 @@ class CourseStudentController extends Controller
     public function getEdit($student_id) {
         $data['course_student'] = $this->service->find($student_id);
         $data['courses'] = course::all();
+        $data['staffs'] = staff::all();
         return view('student-edit', $data); 
     }
 

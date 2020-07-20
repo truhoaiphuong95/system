@@ -106,6 +106,18 @@
                   <p>Xem báo cáo</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('staff.client.list.get')}}" class="nav-link">
+                  <i class="nav-icon fa fa-users"></i>
+                  <p>Danh sách khách hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
+                  <i class="fa fa-bar-chart nav-icon"></i>
+                  <p>Thống kê doanh số</p>
+                </a>
+              </li>
             </ul>
           </li>
           @endif
@@ -136,24 +148,8 @@
                   <p>Đăng ký lịch làm</p>
                 </a>
               </li>
-              @if(UserInfo()->isManager())
-              <li class="nav-item">
-                <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
-                  <i class="fa fa-bar-chart nav-icon"></i>
-                  <p>Thống kê doanh số</p>
-                </a>
-              </li>
-              @endif
             </ul>
           </li>
-          @if(UserInfo()->isOfficial())
-          <li class="nav-item">
-            <a href="{{route('staff.client.list.get')}}" class="nav-link">
-              <i class="nav-icon fa fa-users"></i>
-              <p>Danh sách khách hàng</p>
-            </a>
-          </li>
-          @endif
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
@@ -166,14 +162,14 @@
               <li class="nav-item">
                 <a href="{{route('staff.ticket.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Biên nhận</p>
+                  <p>Biên nhận thiết kế</p>
                 </a>
               </li>
               @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.ticketlog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký sửa chữa</p>
+                  <p>Nhật ký thay đổi</p>
                 </a>
               </li>
               @endif
@@ -189,7 +185,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-cube"></i>
               <p>
-                Dịch vụ
+                DỊCH VỤ - BÁO GIÁ
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -200,25 +196,21 @@
                   <p>Thiết kế</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('staff.service.list.get')}}" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>In ấn</p>
-                </a>
-              </li>
+              @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.service.add.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
                   <p>Thêm dịch vụ</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                DỰ ÁN
+                DỰ ÁN THIẾT KẾ
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -229,12 +221,14 @@
                   <p>Danh sách dự án</p>
                 </a>
               </li>
+              @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Thêm dự án</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
           @if(UserInfo()->isManager())
