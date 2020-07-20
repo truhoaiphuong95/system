@@ -65,7 +65,7 @@
                     @endforeach
                     {{$ticket->requestment}}
                   </td>
-                  <td class="text-center">{{date("Y/m/d", strtotime($ticket->created_at))}}</td>
+                  <td class="text-center">{{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}</td>
                   <td class="text-center">{{$ticket->storage}}</td>
                   <td class="text-center">
                     <span class="badge bg-{{$ticket->ticketStatus->class}}"><span style="display: none;">{{$ticket->ticketStatus->id}}</span>{{$ticket->ticketStatus->name}}</span>

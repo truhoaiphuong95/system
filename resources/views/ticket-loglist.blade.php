@@ -44,7 +44,7 @@
                 <tbody>
                 @foreach($ticket_logs as $data)
                 <tr>
-                  <td>{{ $data->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}</td>
+                  <td class="text-center">{{ $data->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}</td>
                   <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->ticket->id])}}">#{{ $data->ticket->id }} - {{ $data->ticket->model }}</a> ({{ $data->ticket->requestment }})</td>
                   <td>{{ $data->staff->name }}: {{ $data->content }}</td>
                 </tr>

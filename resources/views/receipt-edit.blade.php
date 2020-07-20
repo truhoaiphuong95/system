@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
               <label>Ngày lập phiếu:</label>
-              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ date('Y-m-d', strtotime($receipt->created_at)) }}" required>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}" required>
             </div>
             <div class="form-group">
               <label for="staff_id">Người lập phiếu:</label>
