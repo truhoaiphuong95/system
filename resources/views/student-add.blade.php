@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm học viên</title>
+<title>DELI | Thêm khách hàng</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
   
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>THÊM HỌC VIÊN VÀO LỚP</h1>
+            <h1>THÊM KHÁCH HÀNG VÀO DỰ ÁN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhập lớp học</li>
+              <li class="breadcrumb-item active">Thêm khách hàng vào dự án</li>
             </ol>
           </div>
         </div>
@@ -41,14 +41,25 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">NHẬP THÔNG TIN KHÁCH HÀNG VÀO DỰ ÁN</h3>
+          </div>
           <div class="card-body">
             <div class="col-md-12">
               <div class="form-group col-md-12">
-                <label>Tên học viên</label>
+                <label>TÊN KHÁCH HÀNG:</label>
                 <input type="text" class="form-control" value="{{$client->name}}" disabled>
               </div>
               <div class="form-group col-md-12">
-                <label>Chọn lớp học</label>
+                <label>SỐ ĐIỆN THOẠI:</label>
+                <input type="text" class="form-control" value="{{$client->phone}}" disabled>
+              </div>
+              <div class="form-group col-md-12">
+                <label>NGÀNH NGHỀ KINH DOANH:</label>
+                <input type="text" class="form-control" value="{{$client->major}}" disabled>
+              </div>
+              <div class="form-group col-md-12">
+                <label>DỰ ÁN THIẾT KẾ:</label>
                 <select name="course_id" class="form-control select2" style="width: 100%;">
                   @foreach($courses as $data)
                   @if($data->sum()<$data->maxseat)
@@ -58,25 +69,33 @@
                 </select>
               </div>
               <div class="form-group col-md-12">
-                <label>Phần trăm ưu đãi (%)</label>
+                <label>PHẦN TRĂM ƯU ĐÃI:</label>
                 <input type="number" class="form-control" name="deal_rate" value="{{ old('deal_rate') }}" required>
               </div>
               <div class="form-group col-md-12">
-                <label>Số tiền đã thu</label>
+                <label>SỐ TIỀN ĐÃ THU:</label>
                 <input type="number" class="form-control" name="tuition_done" value="{{ old('tuition_done') }}" required>
               </div>
               <div class="form-group col-md-12">
-                <label>Chương trình ưu đãi</label>
+                <label>CHƯƠNG TRÌNH ƯU ĐÃI:</label>
                 <input type="textarea" class="form-control" name="deal_note" value="{{ old('deal_note') }}" placeholder="Ghi rõ nội dung ưu đãi">
               </div>
               <div class="form-group col-md-12">
-                <label>Ghi chú</label>
+                <label>NHÂN VIÊN:</label>
+                <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
+                  @foreach ($staffs as $data)
+                  <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label>GHI CHÚ:</label>
                 <input type="textarea" class="form-control" name="note" value="{{ old('note') }}" placeholder="Một vài dòng tâm sự...">
               </div>
             </div>
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary pull-right">Thêm mới</button>
+            <button type="submit" class="btn btn-primary pull-right">Thêm Khách hàng vào dự án</button>
           </div>
         </div>
       </div>

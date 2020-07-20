@@ -1,7 +1,8 @@
 @extends('master')
-@section('title')
-  <title>DELI | Sửa biên nhận</title>
-@endsection
+@section('head')
+<title>DELI | Sửa biên nhận</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
+@stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -63,7 +64,6 @@
                     <label for="ram">Mô tả yêu cầu:</label>
                     <input name="ram" type="text" class="form-control" id="ram" value="{{$ticket -> ram}}">
                   </div>
-                  <b class="text-uppercase">Những yêu cầu khác</b>
                   <div class="form-group">
                     <label for="storage">Phong cách thiết kế:</label>
                     <input name="storage" type="text" class="form-control" id="storage" value="{{$ticket -> storage}}">

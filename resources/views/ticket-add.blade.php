@@ -64,7 +64,7 @@
       @endif
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Nhập thông tin biên nhận</h3>
+          <h3 class="card-title">NHẬP THÔNG TIN BIÊN NHẬN</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -108,7 +108,6 @@
               <input name="storage" type="text" class="form-control" id="storage" placeholder="Thời gian trả File 3 ngày trừ lễ và chủ nhật" @if(isset($ticket_old)) value="{{$ticket_old->storage}}" @endif required>
             </div>
             <div>
-              <b class="text-uppercase">Những yêu cầu khác</b>
             </div>
             <div class="form-group">
               <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc):</label>
