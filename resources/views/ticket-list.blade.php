@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sổ biên nhận</title>
+<title>DELI | Danh sách biên nhận</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -19,12 +19,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ BIÊN NHẬN</h1>
+            <h1>DANH SÁCH BIÊN NHẬN THIẾT KẾ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sổ biên nhận</li>
+              <li class="breadcrumb-item active">Danh sách biên nhận thiết kế</li>
             </ol>
           </div>
         </div>
@@ -37,19 +37,21 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách biên nhận</h3>
+              <h3 class="card-title">DANH SÁCH BIÊN NHẬN THIẾT KẾ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Số phiếu</th>
-                  <th>Tên khách hàng</th>
-                  <th>Yêu cầu</th>
-                  <th>Tiến độ</th>
-                  <th>Tổng cộng</th>
-                  <th></th>
+                <tr class="text-center">
+                  <th>SỐ PHIẾU</th>
+                  <th>TÊN KHÁCH HÀNG</th>
+                  <th>DỊCH VỤ</th>
+                  <th>NGÀY NHẬN</th>
+                  <th>NGÀY GIAO</th>
+                  <th>TIẾN ĐỘ</th>
+                  <th>BÁO GIÁ</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -61,11 +63,14 @@
                     @foreach($ticket->services as $service)
                       {{$service->name}},
                     @endforeach
-                    {{$ticket->requestment}}</td>
+                    {{$ticket->requestment}}
+                  </td>
+                  <td>{{date("Y/m/d", strtotime($ticket->created_at))}}</td>
+                  <td>{{$ticket->storage}}</td>
                   <td>
                     <span class="badge bg-{{$ticket->ticketStatus->class}}"><span style="display: none;">{{$ticket->ticketStatus->id}}</span>{{$ticket->ticketStatus->name}}</span>
                   </td>
-                  <td>@if(isset($ticket->price)) @if($ticket->price==0) Miễn phí @else {{MoneyFormat($ticket->price)}} VNĐ @endif @endif</td>
+                  <td>@if(isset($ticket->price)) @if($ticket->price==0) MIỄN PHÍ @else {{MoneyFormat($ticket->price)}} VNĐ @endif @endif</td>
                   <td>
                     <div class="btn-group">
                       <a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>

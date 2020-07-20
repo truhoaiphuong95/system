@@ -107,6 +107,7 @@
                     <th>NGÀY NHẬN</th>
                     <th>SỐ PHIẾU</th>
                     <th>TÊN THƯƠNG HIỆU</th>
+                    <th>LĨNH VỰC KINH DOANH</th>
                     <th>TIẾN ĐỘ THIẾT KẾ</th>
                     <th>HÀNH ĐỘNG</th>
                   </tr>
@@ -117,6 +118,7 @@
                     <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
                     <td class="text-center">{{$data->id}}</td>
                     <td>{{$data->model}}</td>
+                    <td>{{$data->requestment}}</td>
                     <td class="text-center">
                       <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
                     </td>
