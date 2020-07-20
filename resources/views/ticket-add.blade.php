@@ -41,16 +41,16 @@
               <!-- /.card-header -->
         <div class="card-body">
           <table class="table table-bordered">
-            <tr>
+            <tr class="text-center">
               <th>ID</th>
-              <th>Lĩnh vực kinh doanh</th>
-              <th>Thương hiệu</th>
-              <th>Màu sắc</th>
-              <th></th>
+              <th>LĨNH VỰC KINH DOANH</th>
+              <th>TÊN THƯƠNG HIỆU</th>
+              <th>MÀU SẮC</th>
+              <th>HÀNH ĐỘNG</th>
             </tr>
             @foreach($client->tickets as $data)
             <tr>
-              <td>{{$data->id}}</td>
+              <td class="text-center">{{$data->id}}</td>
               <td>{{$data->requestment}}</td>
               <td>{{$data->model}}</td>
               <td>{{$data->cpu}}</td>
@@ -72,7 +72,7 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="inputSostt">Tên Khách Hàng:</label> {{$client->name}} |
+              <label for="inputSostt">Tên Khách hàng:</label> {{$client->name}} |
               <label for="inputSostt">Số Điện Thoại:</label> {{$client->phone}} |
               <label for="inputSostt">Ngày Sinh:</label> {{date("d/m/Y", strtotime($client->birthday))}}
               <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
@@ -114,7 +114,7 @@
               <input name="note" type="text" class="form-control" id="note" placeholder="Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)" required>
             </div>
             <div class="form-group">
-              <label for="other">IN ẤN):</label>
+              <label for="other">IN ẤN:</label>
               <input name="other" type="text" class="form-control" id="other" placeholder="Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)" required>
             </div>
           </div>

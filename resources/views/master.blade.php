@@ -193,7 +193,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.service.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Thiết kế</p>
+                  <p>Dịch vụ thiết kế</p>
                 </a>
               </li>
               @if(UserInfo()->isManager())

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhật ký sửa chữa</title>
+<title>DELI | Nhật ký thay đổi</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>NHẬT KÝ SỬA CHỮA</h1>
+            <h1>NHẬT KÝ THAY ĐỔI</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhật ký sửa chữa</li>
+              <li class="breadcrumb-item active">Nhật ký thay đổi</li>
             </ol>
           </div>
         </div>
@@ -29,22 +29,22 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Nhật ký sửa chữa</h3>
+              <h3 class="card-title">NHẬT KÝ THAY ĐỔI</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Ngày/Tháng</th>
-                  <th>Dòng Máy</th>
-                  <th>Nội dung</th>
+                <tr class="text-center">
+                  <th>THỜI GIAN</th>
+                  <th>THÔNG TIN THIẾT KẾ</th>
+                  <th>NỘI DUNG THAY ĐỔI</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($ticket_logs as $data)
                 <tr>
-                  <td>{{ date("Y/m/d - H:i", strtotime($data->created_at)) }}</td>
+                  <td>{{ $data->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}</td>
                   <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->ticket->id])}}">#{{ $data->ticket->id }} - {{ $data->ticket->model }}</a> ({{ $data->ticket->requestment }})</td>
                   <td>{{ $data->staff->name }}: {{ $data->content }}</td>
                 </tr>
