@@ -57,10 +57,10 @@
                 @foreach($services as $service)
                 <tr>
                   <td class="text-center">{{$service->id}}</td>
-                  <td class="text-center">{{date("Y/m/d", strtotime($service->created_at))}}</td>
-                  <td>{{$service->name}}</td>
+                  <td class="text-center">{{date("d/m/Y", strtotime($service->created_at))}}</td>
+                  <td class="text-uppercase text-warning">{{$service->name}}</td>
                   <td>{{$service->sku}}</td>
-                  <td class="text-right">{{MoneyFormat($service->price)}}</td>
+                  <td class="text-right text-warning">{{MoneyFormat($service->price)}}</td>
                   <td class="text-center">{{$service->tickets_count}}</td>
                   <td class="text-center">
                     <div class="btn-group">
