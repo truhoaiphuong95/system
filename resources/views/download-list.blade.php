@@ -44,19 +44,22 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Tên</th>
-                        <th>Mô tả</th>
-                        <th>SHA1</th>
-                        <th style="width: 10%"></th>
+                        <th>STT</th>
+                        <th>TÊN SẢN PHẨM</th>
+                        <th>MÔ TẢ</th>
+                        <th>HÌNH ẢNH</th>
+                        <th style="width: 10%">HÀNH ĐỘNG</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach ($downloads as $download)
+                      @php $i=1 @endphp
                       <tr>
+                        <td class="text-center">{{ $i++ }}</td>
                         <td>{{$download->name}}</td>
                         <td>{{$download->description}}</td>
                         <td>{{$download->sha1}}</td>
-                        <td>
+                        <td class="text-center">
                           <div class="btn-group">
                             <a href="{{$download->link}}" class="btn btn-success" target="_blank"><i class="nav-icon fa fa-download"></i></a>
                             @if(UserInfo() -> level >=3)
