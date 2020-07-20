@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Thống kê tài chính</title>
+<title>DELI | THỐNG KÊ TÀI CHÍNH</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -20,12 +20,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Thống kê kỹ thuật</h1>
+          <h1>THỐNG KÊ THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Thống kê</li>
+            <li class="breadcrumb-item active">Thống kê tài chính</li>
           </ol>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Số lượng máy nhận năm 2020</h3>
+              <h3 class="card-title">SỐ LƯỢNG BIÊN NHẬN THIẾT KẾ</h3>
             </div>
           </div>
           <div class="card-body">
@@ -69,7 +69,7 @@
 
             <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
-                <i class="fa fa-square text-primary"></i> Số lượng biên nhận kỹ thuật
+                <i class="fa fa-square text-primary"></i> Số lượng biên nhận thiết kế
               </span>
             </div>
           </div>
@@ -80,7 +80,7 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Số lượng học viên đăng ký năm 2020</h3>
+              <h3 class="card-title">SỐ LƯỢNG KHÁCH HÀNG MỚI</h3>
             </div>
           </div>
           <div class="card-body">
@@ -110,7 +110,7 @@
 
             <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
-                <i class="fa fa-square text-primary"></i> Số lượng biên nhận kỹ thuật
+                <i class="fa fa-square text-primary"></i> Số lượng khách hàng mới
               </span>
             </div>
           </div>
@@ -123,7 +123,7 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Tài chính {{$field->name}} năm 2020</h3>
+              <h3 class="card-title text-uppercase">TÀI CHÍNH <b class="text-warning">{{$field->name}}</b></h3>
             </div>
           </div>
           <div class="card-body">
@@ -131,6 +131,8 @@
               <p class="d-flex flex-column">
                 <span class="text-bold text-lg"><span class="text-success">{{ MoneyFormat($receipt_sum[$f]) }}</span><span class="text-danger"> - {{ MoneyFormat($payment_sum[$f]) }}</span> = {{ MoneyFormat($receipt_sum[$f]-$payment_sum[$f]) }}</span>
                 <span>Doanh thu - Chi phí = Lợi nhuận</span>
+                <span>Doanh thu: Tổng số tiền của 1 đơn hàng thiết kế</span>
+                <span>Chi phí: Chi phí hoa hồng cho nhân sự</span>
               </p>
               <p class="ml-auto d-flex flex-column text-right">
                 @if ($receipt_growth[$f]>0)
@@ -168,14 +170,14 @@
           <div class="card-body">
             <table class="table table-bordered">
               <tbody>
-                <tr>
-                  <th></th>
-                  <th>Thu</th>
-                  <th>Chi</th>
-                  <th>Lợi nhuận</th>
+                <tr class="text-center">
+                  <th>THÁNG</th>
+                  <th>THU</th>
+                  <th>CHI</th>
+                  <th>LỢI NHUẬN</th>
                 </tr>
-                @for($i=0; $i<6; $i++)
-                <tr>
+                @for($i=0; $i<12; $i++)
+                <tr class="text-center">
                   <td>Tháng {{$i+1}}</td> 
                   <td>{{MoneyFormat($receipt_count[$f][$i])}}</td>
                   <td>{{MoneyFormat($payment_count[$f][$i])}}</td>
