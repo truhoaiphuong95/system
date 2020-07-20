@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sổ phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
+<title>DELI | Danh sách phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ PHIẾU THU @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</h1>
+            <h1>DANH SÁCH PHIẾU THU @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sổ phiếu thu</li>
+              <li class="breadcrumb-item active">Danh sách phiếu thu</li>
             </ol>
           </div>
         </div>
@@ -29,20 +29,21 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách phiếu thu</h3>
+              <h3 class="card-title">DANH SÁCH PHIẾU THU</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Thời gian</th>
-                  <th>Phân loại</th>
-                  <th>Số lai</th>
-                  <th>Người nộp</th>
-                  <th>Nội dung</th>
-                  <th>Số tiền</th>
-                  <th></th>
+                  <th>THỜI GIAN</th>
+                  <th>DANH MỤC</th>
+                  <th>SỐ LAI</th>
+                  <th>KHÁCH HÀNG</th>
+                  <th>NỘI DUNG THU</th>
+                  <th>SỐ TIỀN</th>
+                  <th>NGƯỜI NHẬN</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,7 @@
                   <td>{{$data->client->name}}</td>
                   <td>{{$data->content}}</td>
                   <td>{{number_format($data->amount,0,",",".")}} ₫</td>
+                  <td>{{$data->staff->name}}</td>
                   <td><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach

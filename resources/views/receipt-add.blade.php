@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>NHẬP PHIẾU THU</h1>
+          <h1>NHẬP THÔNG TIN PHIẾU THU</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập phiếu thu</li>
+            <li class="breadcrumb-item active">Nhập thông tin phiếu thu</li>
           </ol>
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Nhập thông tin phiếu thu</h3>
+          <h3 class="card-title">NHẬP THÔNG TIN PHIẾU THU</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -62,7 +62,7 @@
               <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" required>
             </div>
             <div class="form-group">
-              <label>Ngày nhập phiếu</label>
+              <label>Ngày lập phiếu:</label>
               <input type="date" min="2018-01-01" class="form-control" name="created_at" value="" required>
             </div>
             <div class="form-group">

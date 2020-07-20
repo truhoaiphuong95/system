@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Chỉnh sửa phiếu thu #{{ $receipt->number }}</title>
+<title>DELI | Sửa phiếu thu #{{ $receipt->id }}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>SỬA PHIẾU THU</h1>
+          <h1>SỬA THÔNG TIN PHIẾU THU</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Sửa phiếu thu</li>
+            <li class="breadcrumb-item active">Sửa thông tin phiếu thu</li>
           </ol>
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Nhập thông tin phiếu thu</h3>
+          <h3 class="card-title">SỬA THÔNG TIN PHIẾU THU</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -54,19 +54,15 @@
               <input name="client_id" type="hidden" class="form-control" value="{{ $receipt->client->id }}">
             </div>
             <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" value="{{ $receipt->number }}" placeholder="Số lai" autofocus required>
-            </div>
-            <div class="form-group">
               <label for="content">Nội dung thu:</label>
-              <input name="content" type="text" class="form-control" id="content" value="{{ $receipt->content }}" placeholder="Ví dụ: Thu học phí THCB-K10" autofocus required>
+              <input name="content" type="text" class="form-control" id="content" value="{{ $receipt->content }}" placeholder="Ví dụ: Thu phí thiết kế Logo" autofocus required>
             </div>
             <div class="form-group">
               <label for="amount">Số tiền:</label>
               <input name="amount" type="number" class="form-control" id="amount" value="{{ $receipt->amount }}" placeholder="Nhập vào số tiền" required>
             </div>
             <div class="form-group">
-              <label>Ngày nhập phiếu</label>
+              <label>Ngày lập phiếu:</label>
               <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ date('Y-m-d', strtotime($receipt->created_at)) }}" required>
             </div>
             <div class="form-group">
