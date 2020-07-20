@@ -43,7 +43,7 @@
             <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                      <tr>
+                      <tr class="text-center">
                         <th>STT</th>
                         <th>TÊN SẢN PHẨM</th>
                         <th>MÔ TẢ</th>
@@ -52,8 +52,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($downloads as $download)
                       @php $i=1 @endphp
+                      @foreach ($downloads as $download)
                       <tr>
                         <td class="text-center">{{ $i++ }}</td>
                         <td>{{$download->name}}</td>
