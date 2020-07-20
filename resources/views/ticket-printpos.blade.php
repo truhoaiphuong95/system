@@ -141,13 +141,13 @@
         <div id="mid">
             <div class="info">
                 <p>
-                    <span style="text-transform: uppercase; font-weight: bold">Kiểm tra tình trạng bằng mã QR code</span>
+                    <span style="text-transform: uppercase; font-weight: bold">Kiểm tra tiến độ thiết kế bằng mã QR code</span>
                 </p>
             </div>
         </div>
         <!--End Invoice Mid-->
 
-        <center>{!! QrCode::size(150)->margin(0)->generate('http://crm.techking.vn/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
+        <center>{!! QrCode::size(150)->margin(0)->generate('http://crm.deli4ne1.com/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
         <div id="bot">
             <div id="table">
                 <table>
@@ -176,7 +176,7 @@
                 </p>
             </div>
             <div id="legalcopy">
-                <center class="legal"><strong>SĐT: 085.540.6949<br>hoặc 0888.14.18.11</strong></center>
+                <center class="legal"><strong>SĐT: 097.151.7074<br>hoặc 094.294.7074</strong></center>
             </div>
         </div>
         <!--End InvoiceBot-->

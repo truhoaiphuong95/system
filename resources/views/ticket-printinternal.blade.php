@@ -154,7 +154,7 @@
                 <table>
                     <tr class="tabletitle">
                         <td class="item">
-                            <h2>THÔNG TIN MÁY</h2>
+                            <h2>THÔNG TIN THIẾT KẾ</h2>
                         </td>
                     </tr>
 
@@ -165,24 +165,24 @@
                             <td colspan="2"><span style="text-transform: uppercase; font-weight: bold">{{$ticket->model}} </span></td>
                         </tr>
                         <tr>
-                            <td>CPU </td>
+                            <td>Màu sắc:<</td>
                             <td>{{$ticket->cpu}}  </td>
                         </tr>
                         <tr>
-                            <td>RAM </td>
+                            <td>Mô tả yêu cầu:</td>
                             <td>{{$ticket->ram}}  </td>
                         </tr>
                         <tr>
-                            <td>HDD </td>
+                            <td>Phong cách thiết kế:</td>
                             <td>{{$ticket->storage}}  </td>
                         </tr>
                         <tr>
-                            <td>Phụ kiện </td>
-                            <td>{{$ticket->other}}  </td>
+                            <td>Bố cục thiết kế:</td>
+                            <td>{{$ticket->note}}  </td>
                         </tr>
                         <tr>
-                            <td>Tình trạng</td>
-                            <td>{{$ticket->note}}  </td>
+                            <td>Đặt in ấn:</td>
+                            <td>{{$ticket->other}}  </td>
                         </tr>
                         </table>
                     </tr>
@@ -206,12 +206,12 @@
             </div>
             <!--End Table-->
             <div id="legalcopy">
-                <p class="legal"><strong>Xác nhận gửi máy</strong> 
+                <p class="legal"><strong>Xác nhận</strong> 
                 <p style="height: 99px"></p>
                 </p>
             </div>
             <div id="legalcopy">
-                <p class="legal"><strong>Xác nhận trả máy</strong> 
+                <p class="legal"><strong>Xác nhận</strong> 
                 <p style="height: 99px"></p>
                 </p>
             </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>techKING Center | Theo dõi trình trạng máy</title>
+    <title>THIẾT KẾ DELI | THEO DÕI TIẾN ĐỘ THIẾT KẾ</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -29,8 +29,8 @@
   <body class="hold-transition login-page">
     <div class="col-md-6 mx-auto my-5">
       <div class="login-logo">
-        <a href="/tracking"><b>techKING</b></a>
-        <h5>Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của techKING!</h5>
+        <a href="/tracking"><b>DELI FOR ANYONE</b></a>
+        <h5>Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của DELI!</h5>
       </div>
       <!-- /.login-logo -->
     </div>

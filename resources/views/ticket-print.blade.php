@@ -69,7 +69,7 @@
           <div class="col-10">
             <address>
               <h5 class="text-uppercase">
-                  <b>Yêu cầu khách hàng:</b> {{ $ticket->requestment }}
+                  <b>YÊU CẦU CỦA KHÁCH HÀNG:</b> {{ $ticket->requestment }}
               </h5>
             </address>
           </div>
@@ -84,12 +84,12 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Dòng máy</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> model }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Tên thương hiệu:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->model }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>CPU</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> cpu }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Màu sắc:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->cpu }}</h5></td>
                 </tr>
               </tbody>
             </table>
@@ -98,12 +98,12 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Dung lượng RAM</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> ram }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Mô tả yêu cầu:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->ram }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Dung lượng ổ cứng</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> storage }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Phong cách thiết kế:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->storage }}</h5></td>
                 </tr>
               </tbody>
             </table>
@@ -112,12 +112,12 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Phụ kiện kèm theo</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> other }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Bố cục thiết kế:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->note }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Tình trạng máy</b></h5></td>
-                  <td class="text-uppercase">{{ $ticket -> note }}</h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Đặt in ấn:</b></h5></td>
+                  <td class="text-uppercase">{{ $ticket->other }}</h5></td>
                 </tr>
               </tbody>
             </table>
@@ -127,8 +127,8 @@
         <!-- /.row -->
         
         <div class="row">
-          <div class="col-md-12"><h5><b>* Xin quý khách mang theo phiếu này khi đến nhận máy.
-          <br/>** Quý khách hàng có thể kiểm tra tình trạng sửa chữa máy của mình tại http://sys.eduking.edu.vn/tracking/{{$ticket->id}}.
+          <div class="col-md-12"><h5><b>* XIN CHÂN THÀNH CÁM ƠN QUÝ KHÁCH HÀNG!
+          <br/>** Quý khách hàng có thể kiểm tra tiến độ thiết kế của mình tại http://sys.deli4ne1.com/tracking/{{$ticket->id}}.
           </b></h5></div>
         </div>
         <div class="row">

@@ -153,7 +153,7 @@
                 <tbody>
                   @foreach($client->courseStudents as $data)
                   <tr>
-                  <td class="text-center">{{ $i++ }}</td>
+                    <td class="text-center">{{ $i++ }}</td>
                     <td>{!!$data->course->linkName()!!}</td>
                     <td class="text-center">{{$data->deal_rate}}%</td>
                     <td class="text-right">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>

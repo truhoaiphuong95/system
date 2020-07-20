@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Xem biên nhân #{{$ticket->id}}</title>
+<title>DELI | Xem biên nhân #{{$ticket->id}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
@@ -12,12 +12,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>XEM BIÊN NHẬN</h1>
+          <h1>XEM BIÊN NHẬN THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Xem biên nhận</li>
+            <li class="breadcrumb-item active">Xem biên nhận thiết kế</li>
           </ol>
         </div>
       </div>
