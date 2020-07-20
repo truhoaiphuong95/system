@@ -48,7 +48,7 @@
                 @foreach($clients as $data)
                 <tr>
                   <td class="text-center">{{$data->id}}</td>
-                  <td>{!!$data->linkName()!!}</td>
+                  <td class="text-uppercase">{!!$data->linkName()!!}</td>
                   <td class="text-center">{!!$data->linkPhone()!!}</td>
                   <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
                   <td>{{$data->major}}</td>

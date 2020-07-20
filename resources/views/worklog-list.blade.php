@@ -56,7 +56,7 @@
                         <td class="text-center">{{date('d/m/Y',strtotime($worklog->date))}}</td>
                         <td class="text-center">{{$session[$worklog->session]}}</td>
                         <td class="text-uppercase"><b>{{$worklog->staff->name}}</b></td>
-                        <td>@if($worklog->staff->id == UserInfo()->id) {!!$worklog->content!!} @endif @if(UserInfo()->isManager()) {!!$worklog->content!!} @endif</td>
+                        <td>@if($worklog->staff->id == UserInfo()->id) {!!$worklog->content!!} @endif <b>@if(UserInfo()->isManager()) {!!$worklog->content!!} @endif</b></td>
                         <td>@if($worklog->staff->id == UserInfo()->id) <a href="{{route('staff.worklog.edit.get', ['worklog_id' => $worklog->id])}}" style="float: right;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> @endif</td>
                       </tr>
                       @endforeach
