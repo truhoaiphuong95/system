@@ -162,7 +162,7 @@
             </div>
             <div class="row no-print">
               <div class="col-12">
-                <a href="{{ route('staff.client.edit.get', ['client_id' => $ticket->client->id]) }}" class="btn btn-default">Sửa khách hàng</a>
+                <a href="{{ route('staff.client.edit.get', ['client_id' => $ticket->client->id]) }}" class="btn btn-default">Thay đổi thông tin Khách hàng</a>
                 <a href="{{ route('staff.ticket.edit.get', ['ticket_id' => $ticket->id]) }}" class="btn btn-default">Sửa biên nhận</a>
 
                 <div class="btn-group float-right">
@@ -172,7 +172,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" href="{{ route('staff.ticket.print.get', ['ticket_id' => $ticket->id]) }}" target="_blank">In biên nhận</a>
+                    <a class="dropdown-item" href="{{ route('staff.ticket.print.get', ['ticket_id' => $ticket->id]) }}" target="_blank">IN BIÊN NHẬN</a>
                   </div>
                 </div>
                 
