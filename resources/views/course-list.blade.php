@@ -28,7 +28,7 @@
         @endif
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DANH SÁCH CÁC DỰ ÁN</h1>
+            <h1>DANH SÁCH CÁC DỰ ÁN THIẾT KẾ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -46,21 +46,21 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Danh sách dự án</h3>
+              <h3 class="card-title">DANH SÁCH CÁC DỰ ÁN THIẾT KẾ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th>Ngày nhận</th>
-                  <th>Khách hàng</th>
-                  <th>Đơn vị</th>
-                  <th>Thời gian thiết kế</th>
-                  <th>Ngày bàn giao File</th>
-                  <th>Báo giá</th>
-                  <th>Người thiết kế</th>
-                  <th>Hành động</th>
+                  <th>NGÀY NHẬN</th>
+                  <th>KHÁCH HÀNG</th>
+                  <th>ĐƠN VỊ</th>
+                  <th>THỜI GIAN THIẾT KẾ</th>
+                  <th>NGÀY BÀN GIAO FILE THIẾT KẾ</th>
+                  <th>BÁO GIÁ</th>
+                  <th>NGƯỜI THIẾT KẾ</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,7 +72,7 @@
                   <td>{{ $course->shortname }}</td>
                   <!--<td>{{ number_format($course->tuition,0,",",".") }}</td>-->
                   <td class="text-center">{{ $course->lesson }}</td>
-                  <td class="text-center">{{ $course->schedule }}</td>
+                  <td class="text-center text-uppercase">{{ $course->schedule }}</td>
                   <td class="text-center">{{ $course->tuition }}</td>
                   <!--
                   <td>
@@ -116,21 +116,21 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Danh sách khách hàng đặt in ấn</h3>
+              <h3 class="card-title">DANH SÁCH CÁC DỰ ÁN KHÁCH HÀNG ĐẶT IN</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th>Ngày nhận</th>
-                  <th>Tên khách hàng</th>
-                  <th>Đơn vị</th>
-                  <th>Báo giá</th>
-                  <th>Thời gian in ấn</th>
-                  <th>Ngày nhận</th>
-                  <th>Số lượng hiện tại</th>
-                  <th>Hành động</th>
+                  <th>NGÀY NHẬN</th>
+                  <th>TÊN KHÁCH HÀNG</th>
+                  <th>ĐƠN VỊ</th>
+                  <th>BÁO GIÁ</th>
+                  <th>THỜI GIAN IN</th>
+                  <th>NGÀY GIAO</th>
+                  <th>SỐ LƯỢNG</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -140,9 +140,9 @@
                   <td class="text-center">@if($course->opening_at==NULL) Chưa rõ @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
                   <td>{{ $course->shortname }}</td>
                   <td>{!! $course->linkName() !!}</a></td>
-                  <td >{{ number_format($course->tuition,0,",",".") }}</td>
-                  <td>{{ $course->lesson }}</td>
-                  <td>{{ $course->schedule }}</td>
+                  <td class="text-right">{{ number_format($course->tuition,0,",",".") }}</td>
+                  <td class="text-center">{{ $course->lesson }}</td>
+                  <td class="text-center">{{ $course->schedule }}</td>
                   <td>
                     @if( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
