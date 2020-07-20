@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Xem biên nhân #{{$ticket->id}}</title>
+<title>DELI | Thông tin biên nhận #{{$ticket->id}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
@@ -12,12 +12,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>XEM BIÊN NHẬN</h1>
+          <h1>THÔNG TIN BIÊN NHẬN</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Xem biên nhận</li>
+            <li class="breadcrumb-item active">Thông tin biên nhận</li>
           </ol>
         </div>
       </div>
@@ -54,8 +54,8 @@
             <div class="row">
               <div class="col-12">
                 <h4>
-                  <i class="fa fa-wrench"></i> <b>BIÊN NHẬN SỬA CHỮA MÁY</b>
-                  <small class="float-right"><b>SỐ PHIẾU #{{ $ticket -> id }}</b></small>
+                  <i class="fa fa-wrench"></i> <b>THÔNG TIN BIÊN NHẬN THIẾT KẾ</b>
+                  <small class="float-right"><b>SỐ PHIẾU #{{ $ticket->id }}</b></small>
                 </h4>
               </div>
               <!-- /.col -->
@@ -63,14 +63,14 @@
             <!-- info row -->
             <div class="row invoice-info">
               <div class="col-md-8 invoice-col">
-                <u>Thông tin khách hàng:</u>
+                <u>THÔNG TIN KHÁCH HÀNG:</u>
                 <address>
                   <strong class="text-uppercase">{!! $ticket->client->linkName() !!}</strong><br>
                   <b>Số điện thoại:</b> {!! ($ticket->client->linkPhone()) !!}<br>
                   <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($ticket->client->birthday)) }}<br>
                   <b>Mã khách hàng:</b> KH{{ $ticket->client->id }}<br>
-                  <b>Ngày nhận máy:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
-                  <b>Nhân viên nhận:</b> {{ $ticket->staff->name }}
+                  <b>Ngày nhận:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+                  <b>Nhân viên nhận:</b> <b>{{ $ticket->staff->name }}</b>
                 </address>
               </div>
               <!-- /.col -->
@@ -99,7 +99,7 @@
             <div class="row">
               <div class="col-12">
                 <address>
-                  <h5 class="text-uppercase"><b>Yêu cầu khách hàng:</b> 
+                  <h5 class="text-uppercase"><b>YÊU CẦU CỦA KHÁCH HÀNG:</b> 
                   @foreach($ticket->services as $service)
                   {{$service->name}}, 
                   @endforeach
@@ -114,25 +114,25 @@
                 <table class="table table-striped table table-bordered">
                   <tbody>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>Dòng máy</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>TÊN THƯƠNG HIỆU</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> model }}</h5>
                       </td>
                     </tr>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>CPU</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>MÀU SẮC</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> cpu }}</h5>
                       </td>
                     </tr>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>Dung lượng RAM</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>MÔ TẢ YÊU CẦU</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> ram }}</h5>
                       </td>
                     </tr>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>Dung lượng ổ cứng</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>PHONG CÁCH</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> storage }}</h5>
                       </td>
@@ -144,13 +144,13 @@
                 <table class="table table-striped table table-bordered">
                   <tbody>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>Phụ kiện kèm theo</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>VỊ TRÍ ĐẶT LOGO</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> other }}</h5>
                       </td>
                     </tr>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>Tình trạng máy</b></h5>
+                      <td class="text-uppercase" style="width: 200px"><b>BỐ CỤC MONG MUỐN</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> note }}</h5>
                       </td>
@@ -194,7 +194,7 @@
           @endif
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Thêm nhật ký</h3>
+              <h3 class="card-title">TRAO ĐỔI - GÓP Ý - NHẬN XÉT</h3>
             </div>
             <div class="card-body">
               <div class="col-md-12">
@@ -210,7 +210,7 @@
                       <div class="checkbox icheck">
                         <label>
                           <input name="is_public" type="hidden" value="0">
-                          <input name="is_public" type="checkbox" value="1"> Công khai cho khách hàng
+                          <input name="is_public" type="checkbox" value="1"> Công khai cho Khách hàng xem!!!
                         </label>
                       </div>
                     </div>
@@ -224,16 +224,16 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Nhật ký sửa chữa</h3>
+              <h3 class="card-title">NHẬT KÝ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
-                    <th>Thời gian</th>
-                    <th>Nội dung</th>
-                    <th>Nhân viên</th>
+                  <tr class="text-center">
+                    <th>THỜI GIAN</th>
+                    <th>NỘI DUNG TRAO ĐỔI</th>
+                    <th>NGƯỜI VIẾT</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -104,11 +104,11 @@
               <input name="ram" type="text" class="form-control" id="ram" placeholder="Mô tả yêu cầu" @if(isset($ticket_old)) value="{{$ticket_old->ram}}" @endif required>
             </div>
             <div class="form-group">
-              <label for="storage">Thời gian thiết kế (Trả File)</label>
+              <label for="storage">Phong cách thiết kế:</label>
               <input name="storage" type="text" class="form-control" id="storage" placeholder="Thời gian trả File 3 ngày trừ lễ và chủ nhật" @if(isset($ticket_old)) value="{{$ticket_old->storage}}" @endif required>
             </div>
             <div>
-              <b>Những yêu cầu khác</b>
+              <b class="text-uppercase">Những yêu cầu khác</b>
             </div>
             <div class="form-group">
               <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)</label>
@@ -117,14 +117,6 @@
             <div class="form-group">
               <label for="other">Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)</label>
               <input name="other" type="text" class="form-control" id="other" placeholder="Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)" required>
-            </div>
-            <div class="form-group">
-              <label for="material">Chất liệu in mà bạn muốn sử dụng trong namecard của mình?</label>
-              <input name="material" type="text" class="form-control" id="material" placeholder="Chất liệu in mà bạn muốn sử dụng trong namecard của mình?" required>
-            </div>
-            <div class="form-group">
-              <label for="style">Bạn muốn thiết kế theo phong cách nào?</label>
-              <input name="style" type="text" class="form-control" id="style" placeholder="Đơn giản hiện đại, ít màu sắc hoặc nhiều màu sắc các họa tiết hoa văn?" required>
             </div>
           </div>
           <!-- /.card-body -->
