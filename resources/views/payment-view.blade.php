@@ -74,8 +74,8 @@
                   <tbody>
                     <tr>
                       <td class="text-uppercase text-center">1</td>
-                      <td class="text-uppercase">{{ $payment -> content }}</td>
-                      <td class="text-uppercase text-right">{{ number_format($payment -> amount,0,",",".") }}</td>
+                      <td class="text-uppercase">{{ $payment->content }}</td>
+                      <td class="text-uppercase text-right">{{ number_format($payment->amount,0,",",".") }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -85,7 +85,7 @@
           <div class="card card-footer">
             <div class="row">
               <div class="col-6">
-                <a href="{{ route('staff.receipt.list.get') }}" class="btn btn-warning">Quay lại</a>
+                <a href="{{ route('staff.payment.list.get') }}" class="btn btn-warning">Quay lại</a>
               </div>
               <div class="col-6">
                 <div class="btn-group">
@@ -95,7 +95,7 @@
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu" role="menu">
-                      <a class="dropdown-item" href="{{route('staff.payment.print.get', ['payment_id' => $data->id])}}" target="_blank">In phiếu chi</a>
+                      <a class="dropdown-item" href="#" target="_blank">In phiếu chi</a>
                     </div>
                 </div>
                 <a href="{{ route('staff.payment.destroy.get', ['payment_id' => $payment->id]) }}" class="text-danger ml-2">Xoá</a>
