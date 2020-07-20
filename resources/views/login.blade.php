@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>KING | Đăng nhập</title>
+  <title>DELI | ĐĂNG NHẬP</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="./"><b>KING</b> system</a>
+    <a href="./"><b>DELI</b> system</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
