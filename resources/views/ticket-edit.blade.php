@@ -1,6 +1,6 @@
 @extends('master')
 @section('title')
-  <title>KING | Sửa biên nhận</title>
+  <title>DELI | Sửa biên nhận</title>
 @endsection
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỬA BIÊN NHẬN</h1>
+            <h1>THAY ĐỔI THÔNG TIN BIÊN NHẬN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa biên nhận</li>
+              <li class="breadcrumb-item active">Thay đổi thông tin biên nhận</li>
             </ol>
           </div>
         </div>
@@ -28,7 +28,7 @@
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông tin biên nhận</h3>
+                <h3 class="card-title">THAY ĐỔI THÔNG TIN BIÊN NHẬN</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -48,31 +48,32 @@
                     <input name="id" type="text" class="form-control" id="id" value="{{$ticket -> id}}" readonly="readonly">
                   </div>
                   <div class="form-group">
-                    <label for="requestment">Yêu cầu khách hàng:</label>
+                    <label for="requestment">Lĩnh vực kinh doanh:</label>
                     <input name="requestment" type="text" class="form-control" id="requestment" value="{{$ticket -> requestment}}" autofocus required>
                   </div>
                   <div class="form-group">
-                    <label for="model">Dòng máy:</label>
+                    <label for="model">Tên thương hiệu:</label>
                     <input name="model"type="text" class="form-control" id="model" value="{{$ticket -> model}}" required>
                   </div>
                   <div class="form-group">
-                    <label for="cpu">CPU:</label>
+                    <label for="cpu">Màu sắc:</label>
                     <input name="cpu" type="text" class="form-control" id="cpu" value="{{$ticket -> cpu}}">
                   </div>
                   <div class="form-group">
-                    <label for="ram">Dung lượng RAM:</label>
+                    <label for="ram">Mô tả yêu cầu:</label>
                     <input name="ram" type="text" class="form-control" id="ram" value="{{$ticket -> ram}}">
                   </div>
+                  <b class="text-uppercase">Những yêu cầu khác</b>
                   <div class="form-group">
-                    <label for="storage">Dung lượng ổ cứng:</label>
+                    <label for="storage">Phong cách thiết kế:</label>
                     <input name="storage" type="text" class="form-control" id="storage" value="{{$ticket -> storage}}">
                   </div>
                   <div class="form-group">
-                    <label for="note">Tình trạng máy:</label>
+                    <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc):</label>
                     <input name="note" type="text" class="form-control" id="note" value="{{$ticket -> note}}">
                   </div>
                   <div class="form-group">
-                    <label for="other">Phụ kiện kèm theo:</label>
+                    <label for="other">IN ẤN:</label>
                     <input name="other" type="text" class="form-control" id="other" value="{{$ticket -> other}}">
                   </div>
                 </div>

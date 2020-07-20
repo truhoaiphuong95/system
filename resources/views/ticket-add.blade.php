@@ -111,11 +111,11 @@
               <b class="text-uppercase">Những yêu cầu khác</b>
             </div>
             <div class="form-group">
-              <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)</label>
+              <label for="note">Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc):</label>
               <input name="note" type="text" class="form-control" id="note" placeholder="Bố cục thiết kế mà bạn mong muốn? (Ngang/Dọc)" required>
             </div>
             <div class="form-group">
-              <label for="other">Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)</label>
+              <label for="other">IN ẤN):</label>
               <input name="other" type="text" class="form-control" id="other" placeholder="Vị trí đặt Logo mà bạn mong muốn?(Trái, phải, trên, dưới hoặc ở giữa namecard)" required>
             </div>
           </div>

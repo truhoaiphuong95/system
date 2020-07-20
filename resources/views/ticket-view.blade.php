@@ -144,15 +144,15 @@
                 <table class="table table-striped table table-bordered">
                   <tbody>
                     <tr>
-                      <td class="text-uppercase" style="width: 200px"><b>VỊ TRÍ ĐẶT LOGO</b></h5>
-                      </td>
-                      <td class="text-uppercase">{{ $ticket -> other }}</h5>
-                      </td>
-                    </tr>
-                    <tr>
                       <td class="text-uppercase" style="width: 200px"><b>BỐ CỤC MONG MUỐN</b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> note }}</h5>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-uppercase" style="width: 200px"><b>IN ẤN</b></h5>
+                      </td>
+                      <td class="text-uppercase">{{ $ticket -> other }}</h5>
                       </td>
                     </tr>
                   </tbody>
