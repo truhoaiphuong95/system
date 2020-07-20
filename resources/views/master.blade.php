@@ -101,12 +101,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
-                  <i class="fa fa-history nav-icon"></i>
-                  <p>Xem báo cáo</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('staff.client.list.get')}}" class="nav-link">
                   <i class="nav-icon fa fa-users"></i>
                   <p>Danh sách khách hàng</p>
@@ -134,6 +128,12 @@
                 <a href="{{route('staff.worklog.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Nộp báo cáo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
+                  <i class="fa fa-history nav-icon"></i>
+                  <p>Xem báo cáo</p>
                 </a>
               </li>
               <li class="nav-item">
