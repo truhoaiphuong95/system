@@ -102,8 +102,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <div class="dropdown-menu" role="menu">
-                    <a href="{{ route('staff.receipt.edit.get', ['receipt_id' => $receipt->id])}}" class="btn btn-default" >Sửa phiếu thu</a>
-                    <a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>
+                    <a class="dropdown-item" href="{{ route('staff.receipt.edit.get', ['receipt_id' => $receipt->id])}}" target="_blank">Sửa phiếu thu</a>
+                    <a class="dropdown-item" href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" target="_blank">Xoá</a>
                   </div>
                 </div>
               </div>
