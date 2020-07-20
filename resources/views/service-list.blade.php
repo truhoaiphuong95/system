@@ -45,22 +45,24 @@
                 <thead>
                 <tr class="text-center">
                   <th>ID</th>
+                  <th>NGÀY TẠO</th>
                   <th>TÊN DỊCH VỤ</th>
                   <th>NHÓM</th>
                   <th>PHÍ DỊCH VỤ</th>
                   <th>SỐ LẦN</th>
-                  <th></th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($services as $service)
                 <tr>
                   <td class="text-center">{{$service->id}}</td>
+                  <td class="text-center">{{date("Y/m/d", strtotime($service->created_at))}}</td>
                   <td>{{$service->name}}</td>
                   <td>{{$service->sku}}</td>
                   <td class="text-right">{{MoneyFormat($service->price)}}</td>
                   <td class="text-center">{{$service->tickets_count}}</td>
-                  <td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.service.edit.get', ['service_id' => $service->id])}}" class="btn btn-primary">Sửa</a>
                       @if(UserInfo()->level >= 2)
