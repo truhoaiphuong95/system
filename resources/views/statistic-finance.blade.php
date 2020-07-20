@@ -130,9 +130,10 @@
             <div class="d-flex">
               <p class="d-flex flex-column">
                 <span class="text-bold text-lg"><span class="text-success">{{ MoneyFormat($receipt_sum[$f]) }}</span><span class="text-danger"> - {{ MoneyFormat($payment_sum[$f]) }}</span> = {{ MoneyFormat($receipt_sum[$f]-$payment_sum[$f]) }}</span>
-                <span>Doanh thu - Chi phí = Lợi nhuận</span>
-                <span>Doanh thu: Tổng số tiền của 1 đơn hàng thiết kế</span>
-                <span>Chi phí: Chi phí hoa hồng cho nhân sự</span>
+                <span><b>LỢI NHUẬN = DOANH THU - CHI PHÍ</b></span>
+                <hr>
+                <span><b>- DOANH THU:</b> Tổng số tiền thu được từ {{$field->name}}</span>
+                <span><b>- CHI PHÍ:</b> Chi phí (hoa hồng cho nhân sự, giao hàng, đơn vị in ấn)</span>
               </p>
               <p class="ml-auto d-flex flex-column text-right">
                 @if ($receipt_growth[$f]>0)
