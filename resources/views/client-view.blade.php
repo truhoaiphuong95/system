@@ -62,7 +62,7 @@
                   <b>SỐ ĐIỆN THOẠI:</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>NGÀY SINH:</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else Không có @endif</a>
+                  <b>NGÀY SINH:</b> <a class="float-right">@if (isset($client->birthday)) {{ $client->birthday->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }} @else Không có @endif</a>
                 </li>
                 <li class="list-group-item">
                   <b>ZALO:</b> @if ($client->zalo!="") <a class="float-right" href="https://zalo.me/{{$client->zalo}}">{{$client->zalo}}</a>  @else <a class="float-right">Không có</a> @endif
@@ -115,7 +115,7 @@
                 <tbody>
                   @foreach($client->tickets as $data)
                   <tr>
-                    <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                    <td class="text-center">{{ $data->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}</td>
                     <td class="text-center">{{$data->id}}</td>
                     <td>{{$data->model}}</td>
                     <td>{{$data->requestment}}</td>

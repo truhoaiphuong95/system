@@ -50,7 +50,7 @@
                   <td class="text-center">{{$data->id}}</td>
                   <td>{!!$data->linkName()!!}</td>
                   <td class="text-center">{!!$data->linkPhone()!!}</td>
-                  <td class="text-center">@if (isset($data->birthday)) {{date("d/m/Y", strtotime($data->birthday))}} @else Không có @endif</td>
+                  <td class="text-center">@if (isset($data->birthday)) {{ $data->birthday->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }} @else Không có @endif</td>
                   <td>{{$data->major}}</td>
                   <td class="text-center">
                     <a href="{{route('staff.client.view.get', ['client_id' => $data->id])}}" class="btn btn-primary">Xem</a>
