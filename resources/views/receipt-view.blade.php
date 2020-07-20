@@ -89,18 +89,18 @@
             </div>
           </div>
           <div class="card card-footer">
-            <div class="col-12">
-              <a href="{{ route('staff.receipt.edit.get', ['receipt_id' => $receipt->id])}}" class="btn btn-default" >Sửa phiếu thu</a>
+            <div class="col-6"></div>
+            <div class="col-6">
               <!--<a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>-->
               <div class="btn-group">
-                <a href="{{route('staff.receipt.view.get', ['receipt_id' => $receipt->id])}}" class="btn btn-primary">Xem</a>
+                <a href="{{route('staff.receipt.print.get', ['receipt_id' => $receipt->id])}}" class="btn btn-primary">In biên nhận</a>
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu" role="menu">
+                  <a href="{{ route('staff.receipt.edit.get', ['receipt_id' => $receipt->id])}}" class="btn btn-default" >Sửa phiếu thu</a>
                   <a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>
-                  <a class="dropdown-item" href="{{route('staff.receipt.print.get', ['receipt_id' => $receipt->id])}}" target="_blank">In biên nhận</a>
                 </div>
               </div>
             </div>
