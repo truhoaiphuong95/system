@@ -52,10 +52,10 @@
                   <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
                   <td class="text-center"><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
                   <td class="text-center">{{$data->id}}</td>
-                  <td>{{$data->staff->name}}</td>
-                  <td>{{$data->client->name}}</td>
+                  <td class="text-uppercase"><b>{{$data->staff->name}}</b></td>
+                  <td class="text-uppercase"><b>{{$data->client->name}}</b></td>
                   <td>{{$data->content}}</td>
-                  <td class="text-right">{{number_format($data->amount,0,",",".")}} ₫</td>
+                  <td class="text-right text-danger"><b>{{number_format($data->amount,0,",",".")}} ₫</b></td>
                   <td class="text-center"><a href="{{route('staff.payment.view.get', ['payment_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach

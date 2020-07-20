@@ -67,8 +67,8 @@
                   <thead>
                     <tr class="text-center">
                       <th>STT</th>
-                      <th>Dịch vụ</th>
-                      <th>Thành tiền</th>
+                      <th>DỊCH VỤ</th>
+                      <th>THÀNH TIỀN</th>
                     </tr>
                   </thead>
                   <tbody>
