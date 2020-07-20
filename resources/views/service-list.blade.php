@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Quản lý thư viện dịch vụ</title>
+<title>DELI | Danh sách dịch vụ</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ BIÊN NHẬN</h1>
+            <h1>DANH SÁCH DỊCH VỤ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -37,29 +37,29 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách dịch vụ</h3>
+              <h3 class="card-title">DANH SÁCH DỊCH VỤ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr class="text-center">
                   <th>ID</th>
-                  <th>SKU</th>
-                  <th>Tên dịch vụ</th>
-                  <th>Phí dịch vụ</th>
-                  <th>Số lần</th>
+                  <th>TÊN DỊCH VỤ</th>
+                  <th>NHÓM</th>
+                  <th>PHÍ DỊCH VỤ</th>
+                  <th>SỐ LẦN</th>
                   <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($services as $service)
                 <tr>
-                  <td>{{$service->id}}</td>
-                  <td>{{$service->sku}}</td>
+                  <td class="text-center">{{$service->id}}</td>
                   <td>{{$service->name}}</td>
-                  <td>{{MoneyFormat($service->price)}}</td>
-                  <td>{{$service->tickets_count}}</td>
+                  <td>{{$service->sku}}</td>
+                  <td class="text-right">{{MoneyFormat($service->price)}}</td>
+                  <td class="text-center">{{$service->tickets_count}}</td>
                   <td>
                     <div class="btn-group">
                       <a href="{{route('staff.service.edit.get', ['service_id' => $service->id])}}" class="btn btn-primary">Sửa</a>

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sửa thông tin dịch vụ</title>
+<title>DELI | Thay đổi thông tin dịch vụ</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Sửa thông tin dịch vụ</h1>
+          <h1>THAY ĐỔI THÔNG TIN DỊCH VỤ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Dịch vụ</li>
+            <li class="breadcrumb-item active">Thay đổi thông tin dịch vụ</li>
           </ol>
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Nhập thông tin dịch vụ</h3>
+          <h3 class="card-title">THAY ĐỔI THÔNG TIN DỊCH VỤ</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -48,21 +48,21 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="sku">SKU:</label>
+              <label for="sku">NHÓM DỊCH VỤ:</label>
               <input name="sku" type="text" class="form-control" id="sku" placeholder="Tên rút gọn" value="{{$service->sku}}" autofocus required>
             </div>
             <div class="form-group">
-              <label for="name">Tên dịch vụ:</label>
+              <label for="name">TÊN DỊCH VỤ:</label>
               <input name="name" type="text" class="form-control" id="name" placeholder="Tên dịch vụ" value="{{$service->name}}" required>
             </div>
             <div class="form-group">
-              <label for="price">Phí dịch vụ:</label>
+              <label for="price">PHÍ DỊCH VỤ:</label>
               <input name="price" type="number" class="form-control" id="price" placeholder="Giá dịch vụ" value="{{$service->price}}" required>
             </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Thêm vào</button>
+            <button type="submit" class="btn btn-primary">Thay đổi</button>
             <a onclick="history.go(-1);" class="btn">Quay lại</a>
           </div>
         </form>
