@@ -57,7 +57,7 @@
                 <tbody>
                 @foreach($tickets as $ticket)
                 <tr>
-                  <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">#{{$ticket->id}}</a></td>
+                  <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">#{{$ticket->id}}</a></td>
                   <td>{{$ticket->client->name}}</td>
                   <td>
                     @foreach($ticket->services as $service)
@@ -65,13 +65,13 @@
                     @endforeach
                     {{$ticket->requestment}}
                   </td>
-                  <td>{{date("Y/m/d", strtotime($ticket->created_at))}}</td>
-                  <td>{{$ticket->storage}}</td>
-                  <td>
+                  <td class="text-center">{{date("Y/m/d", strtotime($ticket->created_at))}}</td>
+                  <td class="text-center">{{$ticket->storage}}</td>
+                  <td class="text-center">
                     <span class="badge bg-{{$ticket->ticketStatus->class}}"><span style="display: none;">{{$ticket->ticketStatus->id}}</span>{{$ticket->ticketStatus->name}}</span>
                   </td>
-                  <td>@if(isset($ticket->price)) @if($ticket->price==0) MIỄN PHÍ @else {{MoneyFormat($ticket->price)}} VNĐ @endif @endif</td>
-                  <td>
+                  <td class="text-right">@if(isset($ticket->price)) @if($ticket->price==0) MIỄN PHÍ @else {{MoneyFormat($ticket->price)}} VNĐ @endif @endif</td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
