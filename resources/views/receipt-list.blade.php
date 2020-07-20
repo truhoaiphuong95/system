@@ -51,7 +51,7 @@
                 <tr>
                   <!--<td>{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>-->
                   <td class="text-center">{{date("Y/m/d", strtotime($data->created_at))}}</td>
-                  <td><span class="badge bg-info">{{$data->branch->name}}</span> | <span class="badge bg-danger">{{$data->field->name}}</span></td>
+                  <td class="text-center"><span class="badge bg-info">{{$data->branch->name}}</span> | <span class="badge bg-danger">{{$data->field->name}}</span></td>
                   <td class="text-center">{{$data->number}}</td>
                   <td>{{$data->client->name}}</td>
                   <td>{{$data->content}}</td>

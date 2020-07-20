@@ -99,8 +99,6 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu" role="menu">
-                  <!--<a class="dropdown-item" href="{{route('staff.receipt.printpos.get', ['receipt_id' => $receipt->id])}}" target="_blank">In máy POS</a>
-                  <a class="dropdown-item" href="{{route('staff.receipt.printinternal.get', ['receipt_id' => $receipt->id])}}" target="_blank">In phiếu dán</a>-->
                   <a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>
                   <a class="dropdown-item" href="{{route('staff.receipt.print.get', ['receipt_id' => $receipt->id])}}" target="_blank">In biên nhận</a>
                 </div>
