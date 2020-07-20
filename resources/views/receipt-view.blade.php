@@ -89,7 +89,9 @@
             </div>
           </div>
           <div class="card card-footer">
-            <div class="col-6"></div>
+            <div class="col-6">
+              <a href="{{ route('staff.receipt.list.get') }}" class="btn btn-primary">Quay lại</a>
+            </div>
             <div class="col-6">
               <!--<a href="{{ route('staff.receipt.destroy.get', ['receipt_id' => $receipt->id]) }}" class="text-danger ml-2">Xoá</a>-->
               <div class="btn-group">
