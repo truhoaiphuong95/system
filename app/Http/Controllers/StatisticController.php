@@ -32,10 +32,10 @@ class StatisticController extends Controller
         }
         $data['ticket_count'] = $ticket_count;
 
-        $data['student_sum'] = CourseStudentwhereYear('created_at', '=', Carbon::now()->year)->get()->count();
+        $data['student_sum'] = CourseStudent::whereYear('created_at', '=', Carbon::now()->year)->get()->count();
 
         for($i=0; $i<12; $i++) {
-            $student_count[$i] = CourseStudentwhereYear('created_at', '=', Carbon::now()->year)
+            $student_count[$i] = CourseStudent::whereYear('created_at', '=', Carbon::now()->year)
               ->whereMonth('created_at', '=', $i+1)
               ->get()->count();
         }
