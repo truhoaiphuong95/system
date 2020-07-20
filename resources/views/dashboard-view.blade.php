@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Bảng điều hướng</title>
+<title>DELI | Bảng điều hướng</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>TRUY CẬP NHANH</h1>
+          <h1><b class="text-primary">TRUY CẬP NHANH</b></h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -29,6 +29,7 @@
           </ol>
         </div>
       </div>
+      <hr>
     </div><!-- /.container-fluid -->
   </section>
 
@@ -40,14 +41,14 @@
         <a href="{{route('staff.course.list.get')}}">
         <div class="small-box bg-info">
           <div class="inner" style="padding: 10px;">
-            <h3>Giáo dục</h3>
+            <h3>DỰ ÁN</h3>
 
-            <p>Xem danh sách lớp</p>
+            <p>Xem danh sách dự án thiết kế</p>
           </div>
           <div class="icon">
             <i class="fa fa-shopping-cart"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.course.list.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -59,13 +60,13 @@
         <a href="{{route('staff.ticket.list.get')}}">
         <div class="small-box bg-success">
           <div class="inner" style="padding: 10px;">
-            <h3>Kỹ thuật</h3>
-            <p>Xem danh sách biên nhận</p>
+            <h3>Thiết kế</h3>
+            <p>Xem danh sách biên nhận thiết kế</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.ticket.list.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -77,14 +78,14 @@
         <a href="{{route('staff.shift.register.get')}}">
         <div class="small-box bg-warning">
           <div class="inner" style="padding: 10px;">
-            <h3>Đăng ký ca</h3>
+            <h3>Lịch làm</h3>
 
-            <p>Đăng ký ca làm việc cho tuần sau</p>
+            <p>Đăng ký lịch làm việc cho tuần sau</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.shift.register.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -103,7 +104,7 @@
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.worklog.add.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -111,12 +112,14 @@
       </div>
       <!-- ./col -->
     </div>
+    <hr>
     @if(UserInfo()->isManager())
     <div class="row">
       <div class="col-6">
         <h3>QUẢN LÝ NHANH</h3>
       </div>
     </div>
+    <hr>
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small card -->
@@ -125,12 +128,12 @@
           <div class="inner" style="padding: 10px;">
             <h3>Phiếu thu</h3>
 
-            <p>Xem danh sách lớp</p>
+            <p>Xem danh sách phiếu thu</p>
           </div>
           <div class="icon">
             <i class="fa fa-shopping-cart"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.receipt.list.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -142,13 +145,13 @@
         <a href="{{route('staff.payment.list.get')}}">
         <div class="small-box bg-success">
           <div class="inner" style="padding: 10px;">
-            <h3>Xem phiếu chi</h3>
-            <p>Xem danh sách biên nhận</p>
+            <h3>Phiếu chi</h3>
+            <p>Xem danh sách phiếu chi</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.payment.list.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -160,14 +163,14 @@
         <a href="{{route('staff.shift.manager.get')}}">
         <div class="small-box bg-warning">
           <div class="inner" style="padding: 10px;">
-            <h3>Xếp ca làm việc</h3>
+            <h3>Lịch làm</h3>
 
-            <p>Xếp lịch cho tuần sau</p>
+            <p>Sắp lịch làm việc cho tuần sau</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.shift.manager.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -179,14 +182,14 @@
         <a href="{{route('staff.worklog.list.get')}}">
         <div class="small-box bg-danger">
           <div class="inner" style="padding: 10px;">
-            <h3>Xem báo cáo</h3>
+            <h3>Báo cáo</h3>
 
             <p>Xem báo cáo công việc</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="#" class="small-box-footer">
+          <a href="{{route('staff.worklog.list.get')}}" class="small-box-footer">
             Truy cập <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>

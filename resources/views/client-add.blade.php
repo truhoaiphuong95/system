@@ -35,7 +35,7 @@
       <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Nhập thông tin khách hàng</h3>
+                <h3 class="card-title">NHẬP THÔNG TIN KHÁCH HÀNG</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->

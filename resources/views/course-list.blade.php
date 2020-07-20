@@ -143,7 +143,7 @@
                   <td class="text-right">{{ number_format($course->tuition,0,",",".") }}</td>
                   <td class="text-center">{{ $course->lesson }}</td>
                   <td class="text-center">{{ $course->schedule }}</td>
-                  <td>
+                  <td class="text-center">
                     @if( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
                     @else

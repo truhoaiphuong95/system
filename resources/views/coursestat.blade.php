@@ -9,9 +9,9 @@
 <h2>{{$group->name}}</h2>
 <table style="width:100%">
   <tr>
-    <th>Tên khoá</th>
-    <th>Ngày khai giảng</th>
-    <th>Số lượng</th>
+    <th>TÊN KHÁCH HÀNG</th>
+    <th>NGÀY NHẬN</th>
+    <th>THỜI GIAN THIẾT KẾ</th>
   </tr>
   @foreach($group->courses as $course)
   <tr>

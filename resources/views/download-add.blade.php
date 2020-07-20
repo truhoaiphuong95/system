@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm link tải về</title>
+<title>DELI | Thêm link tải về</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
   

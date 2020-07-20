@@ -44,44 +44,44 @@
               <img class="img-circle elevation-2" src="{{secure_asset('images/course-avt.png')}}" alt="User Avatar">
             </div>
             <!-- /.widget-user-image -->
-            <h3 class="widget-user-username">TÊN KHÁCH HÀNG: {{$course->name}}</h3>
-            <h5 class="widget-user-desc">Đơn vị: {{$course->schedule}}</h5>
+            <h3 class="widget-user-username">TÊN KHÁCH HÀNG: <b class="text-uppercase">{{$course->name}}</b></h3>
+            <h5 class="widget-user-desc">DEADLINE: <b>{{$course->schedule}}</b></h5>
           </div>
           <div class="card-body p-0">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Ngày nhận: <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
+                  NGÀY NHẬN: <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Báo giá: <span class="float-right">{{ MoneyFormat($course->tuition) }}</span>
+                  BÁO GIÁ: <span class="float-right">{{ MoneyFormat($course->tuition) }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Thời gian thiết kế: <span class="float-right">{{$course->lesson}} ngày</span>
+                  THỜI GIAN THIẾT KẾ: <span class="float-right">{{$course->lesson}} ngày</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Người thiết kế: <span class="float-right"><b class="text-uppercase">{{$course->teacher}}</b></span>
+                  NHÀ THIẾT KẾ: <span class="float-right"><b class="text-uppercase">{{$course->teacher}}</b></span>
                 </div>
               </li>
             </ul>
           </div>
           <div class="card-footer">
-            <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
-            <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
+            <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">LẤY SỐ ĐIỆN THOẠI</a>
+            <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">TẢI EXCEL</a>
             <div class="btn-group float-right">
-              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin</a>
+              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">THAY ĐỔI THÔNG TIN</a>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá</a>
+                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">XÓA</a>
               </div>
             </div>
           </div>
@@ -135,7 +135,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">TÊN KHÁCH HÀNG: {{$course->name}}</h3>
+            <h3 class="card-title">TÊN KHÁCH HÀNG: <b class="text-uppercase">{{$course->name}}</b></h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -143,14 +143,14 @@
               <thead>
                 <tr class="text-center">
                   <th>STT</th>
-                  <th>Tên khách hàng</th>
-                  <th>Số điện thoại</th>
-                  <th>Ưu đãi</th>
-                  <th>Báo giá</th>
-                  <th>Đã thu</th>
-                  <th>Chưa thu</th>
-                  <th>Ghi chú</th>
-                  <th>Hành động</th>
+                  <th>TÊN KHÁCH HÀNG</th>
+                  <th>SỐ ĐIỆN THOẠI</th>
+                  <th>ƯU ĐÃI</th>
+                  <th>BÁO GIÁ</th>
+                  <th>ĐÃ THU</th>
+                  <th>CHƯA THU</th>
+                  <th>GHI CHÚ</th>
+                  <th>HÀNH ĐỘNG</th>
                 </tr>
               </thead>
               <tbody>
