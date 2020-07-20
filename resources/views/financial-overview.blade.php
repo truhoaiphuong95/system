@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Tổng kết tài chính</title>
+<title>DELI | Tổng kết tài chính</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

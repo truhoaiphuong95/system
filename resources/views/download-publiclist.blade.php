@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Đôrêmon Center | Danh sách phần mềm</title>
+    <title>THIẾT KẾ DELI | Danh sách phần mềm</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -22,7 +22,7 @@
   <body class="hold-transition login-page">
     <div class="col-md-6 mx-auto my-5">
       <div class="login-logo">
-        <a href="/tracking"><b>ĐÔRÊMON</b> Center</a>
+        <a href="/tracking"><b>THIẾT KẾ DELI</b></a>
         <h5>Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của Đôrêmon!</h5>
         <h6>Mật khẩu nén là trungtamdoremon.com</h6>
       </div>
