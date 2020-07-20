@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KING | In phiếu thu</title>
+    <title>DELI | In phiếu thu</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 -->
@@ -25,8 +25,8 @@
         <div class="row">
           <div class="col-8 offset-md-4">
             <h2 class="page-header">
-              <i class="fa fa-globe"></i>&nbsp;&nbsp;<b style="font-size:30pt">PHIẾU THU (TẠM THỜI)</b>
-              <small class="float-right"><b>SỐ PHIẾU #{{ $phieuthu -> solai }}</b></small>
+              <i class="fa fa-globe"></i>&nbsp;&nbsp;<b style="font-size:30pt">PHIẾU THU</b>
+              <small class="float-right"><b>SỐ PHIẾU #{{$receipt->$id }}</b></small>
             </h2>
           </div>
           <!-- /.col -->
@@ -48,12 +48,12 @@
           <div class="col-sm-6 invoice-col">
             <u>Thông tin khách hàng:</u>
             <address>
-              <strong class="text-uppercase">{{ $phieuthu->rlsClient -> ten }}</strong><br>
-              <b>Số điện thoại:</b> {{ PhoneFormat($phieuthu->rlsClient->sdt) }}<br>
-              <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($phieuthu->rlsClient -> ngaysinh)) }}<br>
-              <b>Mã khách hàng:</b> {{ $phieuthu->rlsClient -> id }}<br>
-              <b>Ngày lập phiếu:</b> {{ $phieuthu->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
-              <b>Nhân viên:</b> {{ $phieuthu->rlsStaff->ten }}
+              <strong class="text-uppercase">{{ $receipt->client->name }}</strong><br>
+              <b>Số điện thoại:</b> {{ PhoneFormat($receipt->client->phone) }}<br>
+              <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client -> ngaysinh)) }}<br>
+              <b>Mã khách hàng:</b> {{ $receipt->client -> id }}<br>
+              <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+              <b>Nhân viên:</b> {{ $receipt->staff->name }}
             </address>
           </div>
           <!-- /.col -->
@@ -84,8 +84,8 @@
               <tbody>
                 <tr>
                   <td class="text-uppercase">1</td>
-                  <td class="text-uppercase">{{ $phieuthu -> noidung }}</td>
-                  <td class="text-uppercase">{{ number_format($phieuthu -> sotien,0,",",".") }}</td>
+                  <td class="text-uppercase">{{ $receipt->content }}</td>
+                  <td class="text-uppercase">{{ number_format($receipt->amount,0,",",".") }}</td>
                 </tr>
               </tbody>
             </table>
@@ -94,7 +94,7 @@
         <i>(Phiếu này chỉ có giá trị tạm thời trong 7 ngày, xin liên hệ nhân viên để nhận lai gốc) </i>
         <div class="row">
           <div class="col-md-3 offset-md-9">
-            <h4 class=""><b>Tổng cộng:</b> {{ number_format($phieuthu -> sotien,0,",",".") }} VNĐ</h4>
+            <h4 class=""><b>Tổng cộng:</b> {{ number_format($receipt->amount,0,",",".") }} VNĐ</h4>
           </div>
         </div>
         <!-- /.row -->
