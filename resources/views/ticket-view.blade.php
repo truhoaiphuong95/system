@@ -164,7 +164,6 @@
               <div class="col-12">
                 <a href="{{ route('staff.client.edit.get', ['client_id' => $ticket->client->id]) }}" class="btn btn-default">Thay đổi thông tin Khách hàng</a>
                 <a href="{{ route('staff.ticket.edit.get', ['ticket_id' => $ticket->id]) }}" class="btn btn-default">Sửa biên nhận</a>
-
                 <div class="btn-group float-right">
                   <a href="{{ route('staff.ticket.printpos.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn-primary" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN MÁY POS</a>
                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -224,7 +223,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">NHẬT KÝ</h3>
+              <h3 class="card-title">NHẬT KÝ TRAO ĐỔI</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
