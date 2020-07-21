@@ -24,6 +24,11 @@ class Client extends Model
         return $this->hasMany('App\Models\CourseStudent');
     }
 
+    public function businesses()
+    {
+        return $this->belongsToMany('App\Models\Business');
+    }
+
     public function linkName() {
         return '<a href="'.route('staff.client.view.get', ['client_id' => $this->id], false).'">'.$this->name.'</a>';
     }

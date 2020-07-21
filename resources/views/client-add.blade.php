@@ -1,6 +1,8 @@
 @extends('master')
 @section('head')
 <title>DELI | Nhập Thông tin Khách hàng</title>
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -70,6 +72,15 @@
                     <label for="major">Ngành nghề kinh doanh:</label>
                     <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
                   </div>
+                  <div class="form-group">
+                    <label for="business">Ngành nghề kinh doanh:</label>
+                    <select name="business[]" id="business" class="form-control select2" multiple="multiple" data-placeholder="Chọn lĩnh vực">
+                      <option value=""></option>
+                      @foreach($businesses as $business)
+                      <option value="{{$business->id}}">{{$business->name}}</option>
+                      @endforeach
+                    </select>
+                  </div>
                 </div>
                 <!-- /.card-body -->
 
@@ -84,4 +95,15 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+@stop
+
+@section('script')
+<!-- Select2 -->
+<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+  })
+</script>
 @stop

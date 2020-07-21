@@ -73,6 +73,10 @@
                 <li class="list-group-item text-uppercase">
                   <b>NGÀNH NGHỀ KINH DOANH:</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
+                
+                <li class="list-group-item text-uppercase">
+                  <b>NGÀNH NGHỀ KINH DOANH:</b><a class="float-right">@foreach($client->businesses as $business) {{ $business->name }}, @endforeach</a>
+                </li>
               </ul>
               @if(UserInfo()->level >= 5)
               <a href="{{route('staff.payment.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuchi">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddClientRequest;
 use App\Http\Controllers\Controller;
 use Core\Services\ClientServiceContract;
+use App\Models\Business;
 
 class ClientController extends Controller
 {
@@ -28,13 +29,15 @@ class ClientController extends Controller
     public function getAdd($phone = NULL)
     {
         $data['phone'] = $phone;
+        $data['businesses'] = Business::all();
         return view('client-add', $data);
     }
     
     public function postAdd(AddClientRequest $req) 
     {
-        $id = $this->service->store($req);
-        return redirect()->route('staff.client.view.get', ['client_id'=>$id]);
+        $client = $this->service->store($req); 
+        $client->businesses()->attach($req->business);
+        return redirect()->route('staff.client.view.get', ['client_id'=>$client]);
     }
     
     public function getEdit($client_id) {
