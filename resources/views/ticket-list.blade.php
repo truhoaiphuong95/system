@@ -58,7 +58,7 @@
                 @foreach($tickets as $ticket)
                 <tr>
                   <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}">#{{$ticket->id}}</a></td>
-                  <td>{{$ticket->client->name}}</td>
+                  <td class="text-uppercase">{{$ticket->client->name}}</td>
                   <td>
                     @foreach($ticket->services as $service)
                       {{$service->name}},
